@@ -477,6 +477,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       viewDashboard.classList.add('hidden');
       viewChat.classList.remove('hidden');
+      // Start chat view from the top
+      chatMessages.scrollTop = 0;
     }
     sidebarItems.forEach(item => {
       item.classList.toggle('sidebar-item--active', item.dataset.view === view);
@@ -926,6 +928,25 @@ document.addEventListener('DOMContentLoaded', () => {
   function scrollToTop(el) {
     // No-op: keep viewport in place so screen-shares show response from the top
   }
+
+  // Preserve scroll position when appending to chat — browsers (especially mobile)
+  // auto-scroll when new content is added to a scrollable container.
+  // Preserve scroll position when modifying chat — browsers (especially mobile)
+  // auto-scroll when content is added/removed in a scrollable container.
+  const _origAppendChild = chatMessages.appendChild.bind(chatMessages);
+  chatMessages.appendChild = function(node) {
+    const scrollPos = chatMessages.scrollTop;
+    const result = _origAppendChild(node);
+    chatMessages.scrollTop = scrollPos;
+    return result;
+  };
+  const _origRemoveChild = chatMessages.removeChild.bind(chatMessages);
+  chatMessages.removeChild = function(node) {
+    const scrollPos = chatMessages.scrollTop;
+    const result = _origRemoveChild(node);
+    chatMessages.scrollTop = scrollPos;
+    return result;
+  };
 
   // --- Settings modal ---
   function openSettings() {
