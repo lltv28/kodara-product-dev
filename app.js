@@ -920,16 +920,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function scrollToBottom() {
-    requestAnimationFrame(() => {
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    });
+    // No-op: keep viewport in place so screen-shares show response from the top
   }
 
   function scrollToTop(el) {
-    requestAnimationFrame(() => {
-      const prev = el.previousElementSibling;
-      (prev || el).scrollIntoView({ block: 'start', behavior: 'instant' });
-    });
+    // No-op: keep viewport in place so screen-shares show response from the top
   }
 
   // --- Settings modal ---
