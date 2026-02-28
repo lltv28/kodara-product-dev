@@ -1,0 +1,566 @@
+/* ========================================================
+   Design Tokens — Per-Demo Theming System
+   Each demo gets a purpose-built palette, typography,
+   spacing, shadows, and interactive states.
+
+   Activated via [data-demo="<id>"] on .app-frame
+   ======================================================== */
+
+/* --------------------------------------------------------
+   GLOBAL FOUNDATIONS
+   Shared across all demos — structural tokens only
+   -------------------------------------------------------- */
+:root {
+  /* --- Spacing Scale (4px base) --- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-7: 1.75rem;   /* 28px */
+  --space-8: 2rem;      /* 32px */
+  --space-9: 2.25rem;   /* 36px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-11: 2.75rem;  /* 44px */
+  --space-12: 3rem;     /* 48px */
+
+  /* --- Border Radius --- */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-full: 999px;
+
+  /* --- Container --- */
+  --container-max-width: 720px;
+  --grid-gap: 1rem;
+
+  /* --- Transition Timing --- */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* --- Breakpoints (for reference, used in media queries) --- */
+  /* --bp-sm: 640px */
+  /* --bp-md: 768px */
+  /* --bp-lg: 1024px */
+  /* --bp-xl: 1280px */
+
+  /* --- Typography Scale (fluid with clamp) --- */
+  --font-size-xs: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);        /* ~11-12px */
+  --font-size-sm: clamp(0.8125rem, 0.775rem + 0.15vw, 0.875rem);      /* ~13-14px */
+  --font-size-base: clamp(0.875rem, 0.825rem + 0.2vw, 1rem);          /* ~14-16px */
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);          /* ~18-20px */
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);             /* ~20-24px */
+  --font-size-2xl: clamp(1.5rem, 1.3rem + 0.7vw, 1.875rem);           /* ~24-30px */
+  --font-size-3xl: clamp(1.75rem, 1.5rem + 0.9vw, 2.25rem);           /* ~28-36px */
+  --font-size-4xl: clamp(2rem, 1.7rem + 1.1vw, 2.75rem);              /* ~32-44px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: -0.01em;
+  --letter-spacing-wide: 0.02em;
+}
+
+/* --------------------------------------------------------
+   DEFAULT THEME (Marcus Fitness — Personal Trainer)
+   Bold, energetic fitness: deep charcoal + electric green
+   -------------------------------------------------------- */
+:root,
+[data-demo="marcus"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #0a6b43;
+  --color-primary-light: #10b981;
+  --color-primary-dark: #064e31;
+  --color-secondary: #f59e0b;
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e5e7eb;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+/* --------------------------------------------------------
+   LUCAS AI — Media Buyer
+   Professional, data-driven: slate + vibrant blue + green accents
+   -------------------------------------------------------- */
+[data-demo="lucas"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #1d4ed8;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e3a8a;
+  --color-secondary: #10b981;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e2e8f0;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+}
+
+/* --------------------------------------------------------
+   ALEX RIVERA — Mindset Coach
+   Warm, approachable: soft purples + warm highlights
+   -------------------------------------------------------- */
+[data-demo="alex"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #7c3aed;
+  --color-primary-light: #a78bfa;
+  --color-primary-dark: #5b21b6;
+  --color-secondary: #f59e0b;
+  --color-background: #ffffff;
+  --color-surface: #faf5ff;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #78716c;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e7e5e4;
+
+  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.06), 0 2px 4px -2px rgba(28, 25, 23, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.07), 0 4px 6px -4px rgba(28, 25, 23, 0.03);
+}
+
+/* --------------------------------------------------------
+   NATHAN CROSS — Business Operations
+   Trustworthy, corporate: navy + blue accents + clean
+   -------------------------------------------------------- */
+[data-demo="nathan"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #1e3a5f;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #172554;
+  --color-secondary: #0ea5e9;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e2e8f0;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+/* --------------------------------------------------------
+   MIKE AI — Copywriting AI
+   Creative, bold: rich purple + vibrant energy
+   -------------------------------------------------------- */
+[data-demo="mike"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #7c3aed;
+  --color-primary-light: #a78bfa;
+  --color-primary-dark: #5b21b6;
+  --color-secondary: #ec4899;
+  --color-background: #ffffff;
+  --color-surface: #faf5ff;
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e9d5ff;
+
+  --shadow-sm: 0 1px 2px rgba(30, 27, 75, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(30, 27, 75, 0.07), 0 2px 4px -2px rgba(30, 27, 75, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(30, 27, 75, 0.08), 0 4px 6px -4px rgba(30, 27, 75, 0.03);
+}
+
+/* --------------------------------------------------------
+   COACH FLEX — Personal Trainer (alt)
+   Energetic fitness: bright emerald + high-energy accents
+   -------------------------------------------------------- */
+[data-demo="trainer"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #059669;
+  --color-primary-light: #34d399;
+  --color-primary-dark: #047857;
+  --color-secondary: #f97316;
+  --color-background: #ffffff;
+  --color-surface: #f0fdf4;
+  --color-text-primary: #14532d;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #d1fae5;
+
+  --shadow-sm: 0 1px 2px rgba(5, 150, 105, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(5, 150, 105, 0.08), 0 2px 4px -2px rgba(5, 150, 105, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.1), 0 4px 6px -4px rgba(5, 150, 105, 0.04);
+}
+
+/* --------------------------------------------------------
+   NEXUS AI — Business Consultant
+   Executive polish: deep navy + blue gradient + authority
+   -------------------------------------------------------- */
+[data-demo="bizconsult"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #1e3a5f;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #0f172a;
+  --color-secondary: #06b6d4;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #cbd5e1;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+/* --------------------------------------------------------
+   SAGE AI — Mindset & Relationship Coach
+   Spiritual, calming: violet gradients + soft warmth
+   -------------------------------------------------------- */
+[data-demo="mindset"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #7c3aed;
+  --color-primary-light: #c084fc;
+  --color-primary-dark: #5b21b6;
+  --color-secondary: #f472b6;
+  --color-background: #ffffff;
+  --color-surface: #faf5ff;
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e9d5ff;
+
+  --shadow-sm: 0 1px 2px rgba(91, 33, 182, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(91, 33, 182, 0.07), 0 2px 4px -2px rgba(91, 33, 182, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(91, 33, 182, 0.08), 0 4px 6px -4px rgba(91, 33, 182, 0.03);
+}
+
+/* --------------------------------------------------------
+   CLOSER AI — Sales Call Coach
+   High-energy sales: bold red/orange + conversion focus
+   -------------------------------------------------------- */
+[data-demo="salescoach"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #dc2626;
+  --color-primary-light: #f87171;
+  --color-primary-dark: #991b1b;
+  --color-secondary: #f97316;
+  --color-background: #ffffff;
+  --color-surface: #fef2f2;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #78716c;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #fecaca;
+
+  --shadow-sm: 0 1px 2px rgba(220, 38, 38, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(220, 38, 38, 0.07), 0 2px 4px -2px rgba(220, 38, 38, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(220, 38, 38, 0.08), 0 4px 6px -4px rgba(220, 38, 38, 0.03);
+}
+
+/* --------------------------------------------------------
+   PROPVAL AI — Real Estate CMA Expert
+   Sophisticated, grounded: teal + warm neutrals
+   -------------------------------------------------------- */
+[data-demo="realestate"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #0891b2;
+  --color-primary-light: #22d3ee;
+  --color-primary-dark: #0e7490;
+  --color-secondary: #059669;
+  --color-background: #ffffff;
+  --color-surface: #f0fdfa;
+  --color-text-primary: #134e4a;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #ccfbf1;
+
+  --shadow-sm: 0 1px 2px rgba(8, 145, 178, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(8, 145, 178, 0.07), 0 2px 4px -2px rgba(8, 145, 178, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(8, 145, 178, 0.08), 0 4px 6px -4px rgba(8, 145, 178, 0.03);
+}
+
+/* --------------------------------------------------------
+   DEALFLOW AI — Transaction Coordinator
+   Organized, reliable: teal/mint + clear structure
+   -------------------------------------------------------- */
+[data-demo="txcoord"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #0d9488;
+  --color-primary-light: #2dd4bf;
+  --color-primary-dark: #0f766e;
+  --color-secondary: #6366f1;
+  --color-background: #ffffff;
+  --color-surface: #f0fdfa;
+  --color-text-primary: #134e4a;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #99f6e4;
+
+  --shadow-sm: 0 1px 2px rgba(13, 148, 136, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(13, 148, 136, 0.07), 0 2px 4px -2px rgba(13, 148, 136, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(13, 148, 136, 0.08), 0 4px 6px -4px rgba(13, 148, 136, 0.03);
+}
+
+/* --------------------------------------------------------
+   LEADIQ AI — Executive Leadership Coach
+   Authoritative, refined: deep indigo + subtle violet
+   -------------------------------------------------------- */
+[data-demo="executive"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #4338ca;
+  --color-primary-light: #818cf8;
+  --color-primary-dark: #312e81;
+  --color-secondary: #0ea5e9;
+  --color-background: #ffffff;
+  --color-surface: #eef2ff;
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #c7d2fe;
+
+  --shadow-sm: 0 1px 2px rgba(67, 56, 202, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(67, 56, 202, 0.07), 0 2px 4px -2px rgba(67, 56, 202, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(67, 56, 202, 0.08), 0 4px 6px -4px rgba(67, 56, 202, 0.03);
+}
+
+/* --------------------------------------------------------
+   WEALTHIQ AI — Financial Coach
+   Trust and stability: emerald green + clean neutrals
+   -------------------------------------------------------- */
+[data-demo="finance"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #059669;
+  --color-primary-light: #34d399;
+  --color-primary-dark: #047857;
+  --color-secondary: #0ea5e9;
+  --color-background: #ffffff;
+  --color-surface: #f0fdf4;
+  --color-text-primary: #14532d;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #d1fae5;
+
+  --shadow-sm: 0 1px 2px rgba(5, 150, 105, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(5, 150, 105, 0.07), 0 2px 4px -2px rgba(5, 150, 105, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.08), 0 4px 6px -4px rgba(5, 150, 105, 0.03);
+}
+
+/* --------------------------------------------------------
+   VIRALMIND AI — Content & Reel Coach
+   Vibrant, expressive: rose/pink + creative energy
+   -------------------------------------------------------- */
+[data-demo="influencer"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #e11d48;
+  --color-primary-light: #fb7185;
+  --color-primary-dark: #be123c;
+  --color-secondary: #8b5cf6;
+  --color-background: #ffffff;
+  --color-surface: #fff1f2;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #78716c;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #fecdd3;
+
+  --shadow-sm: 0 1px 2px rgba(225, 29, 72, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(225, 29, 72, 0.07), 0 2px 4px -2px rgba(225, 29, 72, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(225, 29, 72, 0.08), 0 4px 6px -4px rgba(225, 29, 72, 0.03);
+}
+
+/* --------------------------------------------------------
+   REFLECT AI — Guided Journaling Coach
+   Serene, contemplative: lavender + warm accents
+   -------------------------------------------------------- */
+[data-demo="journal"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #7c3aed;
+  --color-primary-light: #c084fc;
+  --color-primary-dark: #6d28d9;
+  --color-secondary: #f59e0b;
+  --color-background: #ffffff;
+  --color-surface: #faf5ff;
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e9d5ff;
+
+  --shadow-sm: 0 1px 2px rgba(124, 58, 237, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(124, 58, 237, 0.06), 0 2px 4px -2px rgba(124, 58, 237, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.07), 0 4px 6px -4px rgba(124, 58, 237, 0.03);
+}
+
+/* --------------------------------------------------------
+   PULSE AI — Progress Report Generator
+   Editorial, structured: navy + data-focused blue
+   -------------------------------------------------------- */
+[data-demo="reporter"] {
+  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --color-primary: #1e3a5f;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #172554;
+  --color-secondary: #8b5cf6;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #e2e8f0;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.09), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ========================================================
+   INTERACTIVE STATES
+   Applied to all demos using semantic color tokens
+   ======================================================== */
+
+/* Focus-visible outlines — all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+[disabled],
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========================================================
+   REDUCED MOTION
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================================
+   MOBILE-FIRST BASELINE
+   ======================================================== */
+
+/* Minimum tap targets */
+button,
+a,
+input,
+select,
+textarea,
+[role="button"] {
+  min-height: 2.75rem; /* 44px */
+}
+
+/* Prevent iOS zoom on input focus */
+input,
+select,
+textarea {
+  font-size: max(1rem, 16px);
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}

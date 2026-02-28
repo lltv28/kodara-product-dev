@@ -390,6 +390,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function switchDemo(demo) {
     currentDemo = demo;
 
+    // Set data-demo attribute for CSS theming
+    document.getElementById('app').setAttribute('data-demo', demo.id);
+
     // Update sidebar
     sidebarAvatar.textContent = demo.initials;
     sidebarAvatar.style.background = demo.gradient;

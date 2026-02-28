@@ -26,10 +26,10 @@
   --alpha-dark-800: rgba(255, 255, 255, 0.75);
   --alpha-dark-900: rgba(255, 255, 255, 0.80);
 
-  /* Brand (rgba 16,104,68) */
-  --alpha-brand-50: rgba(16, 104, 68, 0.06);
-  --alpha-brand-100: rgba(16, 104, 68, 0.08);
-  --alpha-brand-950: rgba(16, 104, 68, 0.92);
+  /* Brand — derived from --color-primary */
+  --alpha-brand-50: color-mix(in srgb, var(--color-primary, #106844) 6%, transparent);
+  --alpha-brand-100: color-mix(in srgb, var(--color-primary, #106844) 8%, transparent);
+  --alpha-brand-950: var(--color-primary, #106844);
 
   /* Neutrals */
   --neutral-50: #fafafa;
@@ -93,7 +93,7 @@
 
   /* Sidebar */
   --sidebar-width: 316px;
-  --sidebar-tint: rgba(0, 180, 212, 0.05);
+  --sidebar-tint: color-mix(in srgb, var(--color-primary, #00b4d4) 5%, transparent);
 }
 
 /* --- Reset & Base --- */
@@ -337,16 +337,16 @@ html, body {
 }
 
 .sidebar-item:focus-visible {
-  outline: 2px solid var(--alpha-light-200);
+  outline: 2px solid var(--color-primary, var(--alpha-light-200));
   outline-offset: -2px;
 }
 
 .sidebar-item--active {
-  background: var(--alpha-brand-100);
+  background: color-mix(in srgb, var(--color-primary, #106844) 8%, transparent);
 }
 
 .sidebar-item--active:hover {
-  background: var(--alpha-brand-100);
+  background: color-mix(in srgb, var(--color-primary, #106844) 8%, transparent);
 }
 
 .sidebar-item--active::before {
@@ -354,7 +354,7 @@ html, body {
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  background: var(--alpha-brand-100);
+  background: color-mix(in srgb, var(--color-primary, #106844) 8%, transparent);
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -397,8 +397,8 @@ html, body {
 }
 
 .avatar-initials {
-  background: linear-gradient(135deg, rgba(16, 104, 68, 0.92), rgba(16, 104, 68, 0.80));
-  color: var(--white);
+  background: linear-gradient(135deg, var(--color-primary, rgba(16, 104, 68, 0.92)), var(--color-primary-dark, rgba(16, 104, 68, 0.80)));
+  color: var(--color-text-on-primary, var(--white));
   font-size: 12px;
   font-weight: 600;
   width: 100%;
@@ -422,7 +422,7 @@ html, body {
   height: 200%;
   top: -50%;
   left: -50%;
-  background: radial-gradient(circle, rgba(16, 104, 68, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-primary, #106844) 8%, transparent) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -454,7 +454,7 @@ html, body {
   bottom: -158px;
   left: 50%;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(16, 104, 68, 0.03) 0%, transparent 70%);
+  background: radial-gradient(ellipse, color-mix(in srgb, var(--color-primary, #106844) 3%, transparent) 0%, transparent 70%);
 }
 
 .bg-ellipse--2 {
@@ -463,7 +463,7 @@ html, body {
   bottom: -197px;
   left: 50%;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(16, 104, 68, 0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse, color-mix(in srgb, var(--color-primary, #106844) 4%, transparent) 0%, transparent 70%);
 }
 
 /* --- Top Bar --- */
@@ -551,7 +551,7 @@ html, body {
 }
 
 .chat-input-card:focus-within {
-  border-color: var(--alpha-light-200);
+  border-color: color-mix(in srgb, var(--color-primary, #106844) 30%, var(--alpha-light-200));
 }
 
 .chat-input-area {
@@ -634,7 +634,7 @@ html, body {
 }
 
 .icon-btn:focus-visible {
-  outline: 2px solid var(--alpha-light-300);
+  outline: 2px solid var(--color-primary, var(--alpha-light-300));
   outline-offset: 2px;
 }
 
@@ -658,7 +658,7 @@ html, body {
 }
 
 .icon-btn--mic:focus-visible {
-  outline: 2px solid var(--alpha-light-300);
+  outline: 2px solid var(--color-primary, var(--alpha-light-300));
   outline-offset: 2px;
 }
 
@@ -687,7 +687,7 @@ html, body {
 }
 
 .send-btn:focus-visible {
-  outline: 2px solid var(--alpha-light-300);
+  outline: 2px solid var(--color-primary, var(--alpha-light-300));
   outline-offset: 2px;
 }
 
@@ -713,23 +713,23 @@ html, body {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: var(--alpha-brand-50);
+  background: color-mix(in srgb, var(--color-primary, #106844) 6%, transparent);
   border-radius: 24px;
   padding: 4px 8px;
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
-  color: var(--alpha-brand-950);
+  color: var(--color-primary, var(--alpha-brand-950));
   cursor: pointer;
   transition: background-color 150ms ease-out;
 }
 
 .agent-chip:hover {
-  background: var(--alpha-brand-100);
+  background: color-mix(in srgb, var(--color-primary, #106844) 10%, transparent);
 }
 
 .agent-chip:focus-visible {
-  outline: 2px solid var(--alpha-brand-950);
+  outline: 2px solid var(--color-primary, var(--alpha-brand-950));
   outline-offset: 2px;
 }
 
@@ -803,7 +803,7 @@ html, body {
 }
 
 .suggestion-card:focus-visible {
-  outline: 2px solid var(--alpha-light-300);
+  outline: 2px solid var(--color-primary, var(--alpha-light-300));
   outline-offset: 2px;
 }
 
@@ -1208,7 +1208,7 @@ html, body {
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--alpha-brand-950);
+  outline: 2px solid var(--color-primary, var(--alpha-brand-950));
   outline-offset: 2px;
 }
 
@@ -1224,7 +1224,7 @@ html, body {
 
 /* --- Utility --- */
 ::selection {
-  background: rgba(16, 104, 68, 0.15);
+  background: color-mix(in srgb, var(--color-primary, #106844) 15%, transparent);
 }
 
 /* Scrollbar */
@@ -1535,7 +1535,7 @@ html, body {
   font-weight: 500;
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 8px;
   cursor: pointer;
   transition: all 150ms ease-out;
@@ -2113,7 +2113,7 @@ html, body {
   transition: width 600ms ease-out;
 }
 
-.nutrition__macro-bar-fill--protein { background: rgba(16, 104, 68, 0.7); }
+.nutrition__macro-bar-fill--protein { background: color-mix(in srgb, var(--color-primary) 70%, transparent); }
 .nutrition__macro-bar-fill--carbs { background: rgba(26, 26, 26, 0.5); }
 .nutrition__macro-bar-fill--fat { background: rgba(26, 26, 26, 0.25); }
 
@@ -2263,7 +2263,7 @@ html, body {
 }
 
 .nutrition__chart-bar--under { background: var(--alpha-light-200); }
-.nutrition__chart-bar--over { background: rgba(16, 104, 68, 0.5); }
+.nutrition__chart-bar--over { background: color-mix(in srgb, var(--color-primary) 50%, transparent); }
 .nutrition__chart-bar--today { background: var(--alpha-light-900); }
 
 .nutrition__chart-day-label {
@@ -2441,7 +2441,7 @@ html, body {
   align-items: center;
   gap: 4px;
   padding: 2px 8px;
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
@@ -2505,7 +2505,7 @@ html, body {
 }
 
 .fb-ads__status-pill--active {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--green-600);
 }
 
@@ -2561,7 +2561,7 @@ html, body {
   transition: height 300ms ease-out;
 }
 
-.fb-ads__trend-bar--up { background: rgba(16, 104, 68, 0.28); }
+.fb-ads__trend-bar--up { background: color-mix(in srgb, var(--color-primary) 28%, transparent); }
 .fb-ads__trend-bar--down { background: rgba(220, 38, 38, 0.2); }
 .fb-ads__trend-bar--flat { background: var(--alpha-light-200); }
 
@@ -3622,7 +3622,7 @@ html, body {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: rgba(16, 104, 68, 0.06);
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
   border-top: 1px solid var(--alpha-light-50);
   font-size: 12px;
   font-weight: 500;
@@ -3672,7 +3672,7 @@ html, body {
 .source-pill--monday { background: rgba(255, 61, 87, 0.08); color: rgba(255, 61, 87, 0.85); }
 .source-pill--clickup { background: rgba(124, 58, 237, 0.08); color: rgba(124, 58, 237, 0.85); }
 .source-pill--asana { background: rgba(246, 114, 80, 0.08); color: rgba(246, 114, 80, 0.85); }
-.source-pill--quickbooks { background: rgba(16, 104, 68, 0.08); color: rgba(16, 104, 68, 0.92); }
+.source-pill--quickbooks { background: color-mix(in srgb, var(--color-primary) 8%, transparent); color: var(--color-primary); }
 .source-pill--gmail { background: rgba(220, 38, 38, 0.08); color: rgba(220, 38, 38, 0.85); }
 .source-pill--calendar { background: var(--alpha-light-50); color: var(--alpha-light-900); }
 
@@ -3688,7 +3688,7 @@ html, body {
   white-space: nowrap;
 }
 
-.status-pill--on-track { background: rgba(16, 104, 68, 0.08); color: var(--green-600); }
+.status-pill--on-track { background: color-mix(in srgb, var(--color-primary) 8%, transparent); color: var(--green-600); }
 .status-pill--at-risk { background: rgba(245, 158, 11, 0.08); color: var(--amber-500); }
 .status-pill--overdue { background: rgba(220, 38, 38, 0.08); color: var(--red-600); }
 .status-pill--in-progress { background: rgba(59, 130, 246, 0.08); color: #3b82f6; }
@@ -3920,7 +3920,7 @@ html, body {
   transition: width 600ms ease-out;
 }
 
-.pm-hub__workload-bar-fill--normal { background: rgba(16, 104, 68, 0.4); }
+.pm-hub__workload-bar-fill--normal { background: color-mix(in srgb, var(--color-primary) 40%, transparent); }
 .pm-hub__workload-bar-fill--heavy { background: rgba(245, 158, 11, 0.6); }
 .pm-hub__workload-bar-fill--overloaded { background: rgba(220, 38, 38, 0.5); }
 .pm-hub__workload-bar-fill--light { background: rgba(26, 26, 26, 0.15); }
@@ -4034,7 +4034,7 @@ html, body {
   min-height: 2px;
 }
 
-.fin__chart-bar--revenue { background: rgba(16, 104, 68, 0.5); }
+.fin__chart-bar--revenue { background: color-mix(in srgb, var(--color-primary) 50%, transparent); }
 .fin__chart-bar--expense { background: rgba(26, 26, 26, 0.2); }
 
 .fin__chart-month {
@@ -4063,7 +4063,7 @@ html, body {
   border-radius: 4px;
 }
 
-.fin__chart-legend-dot--revenue { background: rgba(16, 104, 68, 0.5); }
+.fin__chart-legend-dot--revenue { background: color-mix(in srgb, var(--color-primary) 50%, transparent); }
 .fin__chart-legend-dot--expense { background: rgba(26, 26, 26, 0.2); }
 
 .fin__chart-legend-label {
@@ -4381,7 +4381,7 @@ html, body {
 .watchdog-card {
   background: var(--white);
   border: 1px solid var(--alpha-light-100);
-  border-left: 3px solid rgba(16, 104, 68, 0.5);
+  border-left: 3px solid color-mix(in srgb, var(--color-primary) 50%, transparent);
   border-radius: 16px;
   box-shadow: var(--shadow-card);
   overflow: hidden;
@@ -4402,7 +4402,7 @@ html, body {
   width: 32px;
   height: 32px;
   border-radius: 999px;
-  background: rgba(16, 104, 68, 0.06);
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4497,7 +4497,7 @@ html, body {
   font-weight: 600;
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 6px;
   padding: 4px 10px;
   cursor: pointer;
@@ -4572,7 +4572,7 @@ html, body {
   align-items: center;
   gap: 4px;
   padding: 2px 8px;
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
@@ -4605,7 +4605,7 @@ html, body {
   width: 48px;
   height: 48px;
   border-radius: 999px;
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4719,7 +4719,7 @@ html, body {
 }
 
 .personality__type-badge--disc {
-  background: linear-gradient(135deg, rgba(16, 104, 68, 0.92), rgba(16, 104, 68, 0.70));
+  background: linear-gradient(135deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, transparent));
 }
 
 .personality__type-badge--enneagram {
@@ -4783,7 +4783,7 @@ html, body {
 }
 
 .personality__coaching-icon--strength {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--green-600);
 }
 
@@ -4997,7 +4997,7 @@ html, body {
 
 .session__timeline-dot--breakthrough {
   background: var(--green-600);
-  box-shadow: 0 0 0 3px rgba(16, 104, 68, 0.08);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .session__timeline-content {
@@ -5027,7 +5027,7 @@ html, body {
 }
 
 .session__mood-pill--positive {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -5107,7 +5107,7 @@ html, body {
 }
 
 .convo__phase--active {
-  border-color: rgba(16, 104, 68, 0.08);
+  border-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .convo__phase-header {
@@ -5473,7 +5473,7 @@ html, body {
   font-size: 12px;
   font-weight: 600;
   color: var(--alpha-brand-950);
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   padding: 2px 8px;
   border-radius: 999px;
 }
@@ -6141,7 +6141,7 @@ html, body {
 }
 
 .funnel__angle-pill--proof {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -6619,7 +6619,7 @@ html, body {
 .meal-plan__row-protein {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
+  color: var(--color-primary);
   line-height: 20px;
   min-width: 36px;
   text-align: right;
@@ -6662,7 +6662,7 @@ html, body {
 .meal-plan__totals-protein {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
+  color: var(--color-primary);
 }
 
 .meal-plan__totals-protein span {
@@ -6711,7 +6711,7 @@ html, body {
 .meal-plan__action-btn--primary {
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .meal-plan__action-btn--primary:hover {
@@ -6898,7 +6898,7 @@ html, body {
   font-weight: 500;
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 8px;
   cursor: pointer;
   transition: all 150ms ease-out;
@@ -6934,7 +6934,7 @@ html, body {
 
 .workout-plan__day--current {
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .workout-plan__day--completed {
@@ -6955,7 +6955,7 @@ html, body {
 }
 
 .workout-plan__day--current .workout-plan__day-header:hover {
-  background: rgba(16, 104, 68, 0.06);
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
 }
 
 .workout-plan__day-left {
@@ -6997,7 +6997,7 @@ html, body {
   display: inline-flex;
   align-items: center;
   padding: 2px 8px;
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
@@ -7231,7 +7231,7 @@ html, body {
 }
 
 .checkin__bar-fill--complete {
-  background: rgba(16, 104, 68, 0.7);
+  background: color-mix(in srgb, var(--color-primary) 70%, transparent);
 }
 
 .checkin__feedback {
@@ -7308,7 +7308,7 @@ html, body {
   align-items: baseline;
   gap: 1px;
   padding: 4px 10px;
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   flex-shrink: 0;
 }
@@ -7323,7 +7323,7 @@ html, body {
 .campaign-dash__health-label {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(16, 104, 68, 0.6);
+  color: color-mix(in srgb, var(--color-primary) 60%, transparent);
 }
 
 /* Top metrics row */
@@ -7692,7 +7692,7 @@ html, body {
 }
 
 .ad-vars__predicted--positive {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--green-600);
 }
 
@@ -7842,7 +7842,7 @@ html, body {
   font-weight: 500;
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 8px;
   cursor: pointer;
   transition: all 150ms ease-out;
@@ -8151,7 +8151,7 @@ html, body {
 }
 
 .proj-tracker__status--on-track {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--green-600);
 }
 
@@ -8186,7 +8186,7 @@ html, body {
 }
 
 .proj-tracker__progress-fill--on-track {
-  background: rgba(16, 104, 68, 0.6);
+  background: color-mix(in srgb, var(--color-primary) 60%, transparent);
 }
 
 .proj-tracker__progress-fill--at-risk {
@@ -8223,10 +8223,10 @@ html, body {
 }
 
 .proj-tracker__milestone--done {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--green-600);
   text-decoration: line-through;
-  text-decoration-color: rgba(16, 104, 68, 0.3);
+  text-decoration-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 .proj-tracker__milestone--current {
@@ -8445,7 +8445,7 @@ html, body {
 .weekly-summary__action-btn--primary {
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .weekly-summary__action-btn--primary:hover {
@@ -8601,7 +8601,7 @@ html, body {
   font-weight: 500;
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 6px;
   cursor: pointer;
   transition: all 150ms ease-out;
@@ -8657,8 +8657,8 @@ html, body {
 }
 
 .onboard__step-dot--active {
-  background: rgba(16, 104, 68, 0.08);
-  border-color: rgba(16, 104, 68, 0.20);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -8880,7 +8880,7 @@ html, body {
   font-weight: 500;
   color: var(--alpha-brand-950);
   background: var(--alpha-brand-50);
-  border: 1px solid rgba(16, 104, 68, 0.08);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   cursor: pointer;
   transition: all 150ms ease-out;
@@ -8974,7 +8974,7 @@ html, body {
 
 .memory__edit-btn:hover {
   background: var(--alpha-brand-50);
-  border-color: rgba(16, 104, 68, 0.12);
+  border-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
 
 .memory__clear-btn {
@@ -9013,8 +9013,8 @@ html, body {
 }
 
 .plan__phase--active {
-  border-color: rgba(16, 104, 68, 0.15);
-  background: rgba(16, 104, 68, 0.02);
+  border-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 2%, transparent);
 }
 
 .plan__phase-header {
@@ -9036,7 +9036,7 @@ html, body {
 
 .plan__phase-badge--active {
   color: var(--alpha-brand-950);
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
 .plan__phase-info {
@@ -9066,7 +9066,7 @@ html, body {
   font-size: 12px;
   font-weight: 600;
   color: var(--alpha-brand-950);
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   white-space: nowrap;
 }
@@ -9074,7 +9074,7 @@ html, body {
 .plan__progress-bar {
   height: 3px;
   margin: 0 16px;
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -9210,8 +9210,8 @@ html, body {
 }
 
 .checkin__mood-btn--selected {
-  background: rgba(16, 104, 68, 0.04);
-  border-color: rgba(16, 104, 68, 0.20);
+  background: color-mix(in srgb, var(--color-primary) 4%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -9349,8 +9349,8 @@ html, body {
 }
 
 .checkin__sleep-btn--selected {
-  background: rgba(16, 104, 68, 0.04);
-  border-color: rgba(16, 104, 68, 0.20);
+  background: color-mix(in srgb, var(--color-primary) 4%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -9602,7 +9602,7 @@ html, body {
 }
 
 .progress-tl__legend-dot--mood {
-  background: #106844;
+  background: var(--color-primary);
 }
 
 .progress-tl__legend-dot--milestone {
@@ -9612,7 +9612,7 @@ html, body {
 .progress-tl__legend-line {
   width: 16px;
   height: 2px;
-  background: rgba(16, 104, 68, 0.15);
+  background: color-mix(in srgb, var(--color-primary) 15%, transparent);
   border-radius: 999px;
 }
 
@@ -9819,9 +9819,9 @@ html, body {
   display: flex;
   gap: 8px;
   padding: 8px 12px;
-  background: rgba(16, 104, 68, 0.03);
+  background: color-mix(in srgb, var(--color-primary) 3%, transparent);
   border-radius: 8px;
-  border-left: 3px solid rgba(16, 104, 68, 0.20);
+  border-left: 3px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .scorecard__tip svg {
@@ -9939,8 +9939,8 @@ html, body {
 
 .callhist__filter--active {
   color: var(--alpha-brand-950);
-  background: rgba(16, 104, 68, 0.06);
-  border-color: rgba(16, 104, 68, 0.12);
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
 
 .callhist__list {
@@ -10154,9 +10154,9 @@ html, body {
 
 .playbook__tip {
   padding: 10px 12px;
-  background: rgba(16, 104, 68, 0.03);
+  background: color-mix(in srgb, var(--color-primary) 3%, transparent);
   border-radius: 8px;
-  border-left: 3px solid rgba(16, 104, 68, 0.20);
+  border-left: 3px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .playbook__tip-badge {
@@ -10164,7 +10164,7 @@ html, body {
   font-size: 11px;
   font-weight: 600;
   color: var(--alpha-brand-950);
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   padding: 2px 8px;
   border-radius: 4px;
   margin-bottom: 6px;
@@ -12452,7 +12452,7 @@ html, body {
 }
 
 .wealth__tx-category--income {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--green-600);
 }
 
@@ -12998,7 +12998,7 @@ html, body {
 }
 
 .reel__section-badge--body {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -13310,7 +13310,7 @@ html, body {
 }
 
 .cal-content__type-pill--story {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -13788,7 +13788,7 @@ html, body {
 }
 
 .journal-hist__mood--calm {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -13798,7 +13798,7 @@ html, body {
 }
 
 .journal-hist__mood--grateful {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -14425,7 +14425,7 @@ html, body {
 }
 
 .report__metric-change--positive {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -14469,7 +14469,7 @@ html, body {
 }
 
 .report__goal-status--completed {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -14615,7 +14615,7 @@ html, body {
 }
 
 .activity__icon--assignment {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -15066,7 +15066,7 @@ html, body {
 }
 
 .scheduler__history-status--clicked {
-  background: rgba(16, 104, 68, 0.08);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--alpha-brand-950);
 }
 
@@ -15393,7 +15393,7 @@ html, body {
 }
 
 .trainer-week__bar--under {
-  background: rgba(16, 104, 68, 0.25);
+  background: color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .trainer-week__bar--over {
@@ -15401,7 +15401,7 @@ html, body {
 }
 
 .trainer-week__bar--today {
-  background: rgba(16, 104, 68, 0.6);
+  background: color-mix(in srgb, var(--color-primary) 60%, transparent);
 }
 
 .trainer-week__bar-label {
@@ -15509,7 +15509,7 @@ html, body {
 .trainer-workout__day-progress {
   font-size: 12px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
+  color: var(--color-primary);
   margin-left: auto;
 }
 
@@ -15560,9 +15560,9 @@ html, body {
 }
 
 .trainer-workout__check--done {
-  background: rgba(16, 104, 68, 0.12);
-  border-color: rgba(16, 104, 68, 0.3);
-  color: #106844;
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  color: var(--color-primary);
 }
 
 .trainer-workout__check--done svg {
@@ -15660,9 +15660,9 @@ html, body {
 }
 
 .trainer-checkin__opt.selected {
-  background: rgba(16, 104, 68, 0.08);
-  border-color: rgba(16, 104, 68, 0.2);
-  color: #106844;
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+  color: var(--color-primary);
   font-weight: 600;
 }
 
@@ -15689,7 +15689,7 @@ html, body {
   width: 16px;
   height: 16px;
   border-radius: 999px;
-  background: #106844;
+  background: var(--color-primary);
   cursor: pointer;
   border: 2px solid #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -15699,7 +15699,7 @@ html, body {
   width: 16px;
   height: 16px;
   border-radius: 999px;
-  background: #106844;
+  background: var(--color-primary);
   cursor: pointer;
   border: 2px solid #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -15801,7 +15801,7 @@ html, body {
 }
 
 .fbads-health__trend--up {
-  color: #106844;
+  color: var(--color-success);
 }
 
 .fbads-health__gauge {
@@ -15821,7 +15821,7 @@ html, body {
 .fbads-health__gauge-fill {
   height: 100%;
   border-radius: 999px;
-  background: rgba(16, 104, 68, 0.6);
+  background: color-mix(in srgb, var(--color-primary) 60%, transparent);
   transition: width 800ms ease-out;
 }
 
@@ -15926,7 +15926,7 @@ html, body {
   gap: 4px;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
+  color: var(--color-primary);
   letter-spacing: -0.15px;
   margin-bottom: 8px;
 }
@@ -15942,7 +15942,7 @@ html, body {
 
 .fbads-var__card--original {
   background: transparent;
-  border: 1px solid rgba(16, 104, 68, 0.12);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
 
 .fbads-var__card-angle {
@@ -16070,7 +16070,7 @@ html, body {
 .fbads-test__metric {
   font-size: 12px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
+  color: var(--color-primary);
   line-height: 16px;
 }
 
@@ -16206,7 +16206,7 @@ html, body {
   width: 100%;
   max-width: 32px;
   border-radius: 4px 4px 0 0;
-  background: rgba(16, 104, 68, 0.15);
+  background: color-mix(in srgb, var(--color-primary) 15%, transparent);
   transition: height 400ms ease-out;
 }
 
@@ -16732,14 +16732,14 @@ html, body {
 }
 
 .sage-onboard__step-dot--active {
-  background: rgba(16, 104, 68, 0.08);
-  border-color: rgba(16, 104, 68, 0.20);
-  color: rgba(16, 104, 68, 0.92);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+  color: var(--color-primary);
 }
 
 .sage-onboard__step-dot--done {
-  background: rgba(16, 104, 68, 0.92);
-  border-color: rgba(16, 104, 68, 0.92);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
   color: rgba(255, 255, 255, 0.80);
 }
 
@@ -16830,9 +16830,9 @@ html, body {
 }
 
 .sage-onboard__chip--selected {
-  color: rgba(16, 104, 68, 0.92);
-  background: rgba(16, 104, 68, 0.06);
-  border-color: rgba(16, 104, 68, 0.20);
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .sage-onboard__radio-group {
@@ -16975,8 +16975,8 @@ html, body {
 }
 
 .sage-plan__phase--active {
-  border-color: rgba(16, 104, 68, 0.15);
-  background: rgba(16, 104, 68, 0.02);
+  border-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 2%, transparent);
 }
 
 .sage-plan__phase-header {
@@ -17143,7 +17143,7 @@ html, body {
   height: 18px;
   border-radius: 999px;
   background: var(--white);
-  border: 2px solid rgba(16, 104, 68, 0.92);
+  border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -17153,7 +17153,7 @@ html, body {
   height: 18px;
   border-radius: 999px;
   background: var(--white);
-  border: 2px solid rgba(16, 104, 68, 0.92);
+  border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -17161,7 +17161,7 @@ html, body {
 .sage-checkin__slider-val {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
+  color: var(--color-primary);
   white-space: nowrap;
   min-width: 42px;
   text-align: right;
@@ -17234,8 +17234,8 @@ html, body {
 }
 
 .sage-timeline__entry--breakthrough .sage-timeline__content {
-  background: rgba(16, 104, 68, 0.03);
-  border-color: rgba(16, 104, 68, 0.12);
+  background: color-mix(in srgb, var(--color-primary) 3%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
 
 .sage-timeline__line-segment {
@@ -17304,8 +17304,8 @@ html, body {
   padding: 2px 8px;
   font-size: 11px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
-  background: rgba(16, 104, 68, 0.08);
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   border-radius: 999px;
   white-space: nowrap;
 }
@@ -17371,9 +17371,9 @@ html, body {
 }
 
 .trainer-checkin__opt--active {
-  color: rgba(16, 104, 68, 0.92);
-  background: rgba(16, 104, 68, 0.04);
-  border-color: rgba(16, 104, 68, 0.20);
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 4%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .trainer-checkin__slider-wrap {
@@ -17400,7 +17400,7 @@ html, body {
   height: 18px;
   border-radius: 999px;
   background: var(--white);
-  border: 2px solid rgba(16, 104, 68, 0.92);
+  border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -17410,7 +17410,7 @@ html, body {
   height: 18px;
   border-radius: 999px;
   background: var(--white);
-  border: 2px solid rgba(16, 104, 68, 0.92);
+  border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -17418,7 +17418,7 @@ html, body {
 .trainer-checkin__slider-val {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(16, 104, 68, 0.92);
+  color: var(--color-primary);
   white-space: nowrap;
   min-width: 60px;
   text-align: right;
