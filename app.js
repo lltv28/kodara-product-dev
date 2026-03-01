@@ -931,7 +931,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="uni-generic-thinking__header">
           <div class="uni-generic-thinking__icon uni-pulse-ring">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3L12 14l-4.8 2.6.9-5.3L4.3 7.6l5.3-.8L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <span class="uni-generic-thinking__text">${text}</span>
@@ -1014,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="cal-ai__scanning">
         <div class="cal-ai__scan-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"/>
+            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="cal-ai__scan-text">Identifying food items...</span>
@@ -1599,7 +1599,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="competitor__search-status">
         <div class="competitor__search-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"/>
+            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="competitor__search-text">Searching Facebook Ad Library for Glossier...</span>
@@ -1623,7 +1623,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageCount = ads.filter(a => a.format === 'Image').length;
     const carouselCount = ads.filter(a => a.format === 'Carousel').length;
 
-    const thumbIcon = `<svg class="competitor__ad-thumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>`;
+    const thumbIcon = `<svg class="competitor__ad-thumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm12.75-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
     const adsHtml = ads.map(ad => `
       <div class="competitor__ad-card" data-format="${ad.format}">
@@ -1692,7 +1692,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="ad-gen__thinking">
         <div class="ad-gen__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3L12 14l-4.8 2.6.9-5.3L4.3 7.6l5.3-.8L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="ad-gen__thinking-text">Generating ad concepts based on your<br>campaign data and competitor analysis...</span>
@@ -1768,10 +1768,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="ad-gen__preview">
           <div class="ad-gen__preview-frame">
-            <svg class="ad-gen__preview-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="24" height="24" rx="4"/>
-              <path d="M4 22l7-7 5 5 4-4 8 8" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="11" cy="11" r="2"/>
+            <svg class="ad-gen__preview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm12.75-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <span class="ad-gen__preview-desc">${c.previewDesc}</span>
           </div>
@@ -1781,8 +1779,8 @@ document.addEventListener('DOMContentLoaded', () => {
           ${c.formats.map(f => `<span class="ad-gen__format-pill">${f}</span>`).join('')}
         </div>
         <div class="ad-gen__prediction">
-          <svg class="ad-gen__prediction-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M8 1l2 4 4.5.6-3.3 3.2.8 4.5L8 11l-4 2.3.8-4.5L1.5 5.6 6 5l2-4z" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="ad-gen__prediction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="ad-gen__prediction-text">Based on your historical data, this concept could achieve a <strong>${c.prediction}</strong>. Confidence: <strong>${c.confidence}</strong></span>
         </div>
@@ -1823,9 +1821,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="creative-preview__loading">
         <div class="creative-preview__loading-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="3"/>
-            <path d="M3 16l5-5 4 4 3-3 6 6" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm12.75-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="creative-preview__loading-text">Creating 4 ad creative variations...</span>
@@ -1959,14 +1955,11 @@ document.addEventListener('DOMContentLoaded', () => {
       </video>
       <div class="video-diagnostic__volume">
         <button class="video-diagnostic__volume-btn" aria-label="Mute">
-          <svg class="video-diagnostic__vol-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M10 4L5.5 7.5H2v5h3.5L10 16V4z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path class="video-diagnostic__vol-wave1" d="M13 7.5a4 4 0 010 5" stroke-linecap="round"/>
-            <path class="video-diagnostic__vol-wave2" d="M15.5 5a8 8 0 010 10" stroke-linecap="round"/>
+          <svg class="video-diagnostic__vol-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <svg class="video-diagnostic__mute-icon hidden" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M10 4L5.5 7.5H2v5h3.5L10 16V4z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 7.5l-4 5M12 7.5l4 5" stroke-linecap="round"/>
+          <svg class="video-diagnostic__mute-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
         <input class="video-diagnostic__volume-slider" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume"/>
@@ -2384,9 +2377,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="watchdog-card">
       <div class="watchdog__header">
         <div class="watchdog__header-icon">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16z"/>
-            <path d="M10 6v4l2.5 2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="watchdog__header-text">
@@ -2463,8 +2455,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mindset__thinking">
         <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 21h6M10 17h4" stroke-linecap="round"/>
+            <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mindset__thinking-text">Loading your personality profile...</span>
@@ -2544,7 +2535,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="personality__coaching-items">
             <div class="personality__coaching-item">
               <div class="personality__coaching-icon personality__coaching-icon--strength">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1l2 4 4.5.6-3.3 3.2.8 4.5L8 11l-4 2.3.8-4.5L1.5 5.6 6 5l2-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
                 <span class="personality__coaching-label">Key Strength</span>
@@ -2562,7 +2553,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="personality__coaching-item">
               <div class="personality__coaching-icon personality__coaching-icon--approach">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2a6 6 0 100 12A6 6 0 008 2z"/><path d="M8 5v3l2 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
                 <span class="personality__coaching-label">Coaching Approach</span>
@@ -2726,7 +2717,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mindset__thinking">
         <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332c1.972-.049 3.918-.217 5.831-.497 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mindset__thinking-text">Preparing your conversation guide...</span>
@@ -2755,7 +2746,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="convo__context">
         <div class="convo__context-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M8 5v3M8 10h.01" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 00.708.852h.058a.75.75 0 00.354-.149l.041-.02M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="convo__context-text">
           Based on your <strong>anxious-preoccupied attachment</strong> style, you tend to over-explain and seek immediate reassurance during conflict. This guide will help you stay grounded and direct.
@@ -3021,8 +3012,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mike__thinking mike__thinking--long">
         <div class="mike__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mike__thinking-text">Building your 1-hour webinar script...</span>
@@ -3188,7 +3178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ${fullScriptHtml}
       </div>
       <div class="webinar__framework-note">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M8 5v3M8 10h.01" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 00.708.852h.058a.75.75 0 00.354-.149l.041-.02M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Built on the <strong>Perfect Webinar</strong> framework \u2014 the proven structure behind $305M+ in webinar revenue.</span>
       </div>
       <div class="ad-gen__actions">
@@ -3287,7 +3277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="chat-response-card" id="funnelCard">
       <div class="funnel__platform-header">
         <div class="funnel__platform-icon funnel__platform-icon--cf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 8.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div>
           <div class="funnel__platform-name">Sales Funnel <span class="funnel__platform-badge">Built in ClickFunnels</span></div>
@@ -3335,7 +3325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="funnel__section">
           <span class="ad-gen__copy-label">Guarantee</span>
           <div class="funnel__guarantee">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75l2.25 2.25L15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <div>
               <strong>90-Day Results or Full Refund</strong>
               <span>Follow the implementation plan and put in the work. If you don\u2019t see measurable results within 90 days, email us and we\u2019ll refund every penny. No questions asked.</span>
@@ -3383,8 +3373,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mike__thinking">
         <div class="mike__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m21.75 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m21.75 0v.243a2.25 2.25 0 01-1.071 1.916l-7.5 4.615a2.25 2.25 0 01-2.358 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mike__thinking-text">Writing your 5-email welcome sequence...</span>
@@ -3585,7 +3574,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mike__thinking">
         <div class="mike__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mike__thinking-text">Generating 10 ad hook variations...</span>
@@ -4067,7 +4056,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mindset__thinking">
         <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"/>
+            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mindset__thinking-text">Scanning meal photo...</span>
@@ -4175,7 +4164,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="fb-ads__metric"><span class="fb-ads__metric-value fb-ads__metric-value--bad">${ad.roas}</span><span class="fb-ads__metric-label">ROAS</span></div>
         </div>
         <div class="fbads-pause__reason">
-          <svg class="fbads-pause__reason-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5v3m0 3h.01M15 8A7 7 0 101 8a7 7 0 0014 0z" stroke-linecap="round"/></svg>
+          <svg class="fbads-pause__reason-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 00.708.852h.058a.75.75 0 00.354-.149l.041-.02M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>${ad.reason}</span>
         </div>
       </div>`).join('');
@@ -4966,8 +4955,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mindset__thinking">
         <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 21h6M10 17h4" stroke-linecap="round"/>
+            <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mindset__thinking-text">Preparing your onboarding experience...</span>
@@ -4991,8 +4979,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="mindset__thinking">
         <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 21h6M10 17h4" stroke-linecap="round"/>
+            <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="mindset__thinking-text">Loading your AI memory...</span>
@@ -5105,7 +5092,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
           <div class="scorecard__tip">
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1a5 5 0 015 5c0 1.7-.85 3.2-2.14 4.1V12a1.5 1.5 0 01-1.5 1.5h-2.72A1.5 1.5 0 014.14 12v-1.9A5 5 0 017 1z" stroke-linecap="round"/><path d="M6 13h2" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>${c.tip}</span>
           </div>
         </div>
@@ -5150,7 +5137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="chat-response-card__footer">
         <button class="scorecard__transcript-btn" id="scorecardTranscriptBtn">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M5 5h6M5 8h6M5 11h3" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           View Full Transcript
         </button>
       </div>
@@ -5238,7 +5225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = [
       {
         title: 'Discovery Framework',
-        icon: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/><path d="M11 11l3.5 3.5" stroke-linecap="round"/></svg>',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         items: [
           'Open with a pattern interrupt: "Most sales reps ask about budget first. I want to understand what\'s actually broken."',
           'Use the 3-Layer Deep technique: Surface problem, business impact, emotional cost.',
@@ -5249,7 +5236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         title: 'Objection Handling Scripts',
-        icon: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2a6 6 0 100 12 6 6 0 000-12z"/><path d="M8 5v3l2 2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         items: [
           '"Too expensive" \u2192 "Help me understand \u2014 too expensive compared to what? The cost of the problem, or another solution?"',
           '"Need to think about it" \u2192 "Totally fair. What specific questions do you want answered before deciding? Let\'s address them now."',
@@ -5260,7 +5247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         title: 'Value Propositions',
-        icon: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1l2 4 4.5.6-3.3 3.2.8 4.5L8 11l-4 2.3.8-4.5L1.5 5.6 6 5l2-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         items: [
           'Lead with outcomes, not features: "Clients cut onboarding time by 67%" not "We have an onboarding module."',
           'Use their math: "At 50 hires/quarter and 20 hours each, that\'s 1,000 hours. We bring that to 330."',
@@ -5833,7 +5820,7 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'in-progress':
           return '<div class="txcoord__check-icon txcoord__check-icon--progress"><div class="txcoord__spinner"></div></div>';
         case 'overdue':
-          return '<svg class="txcoord__check-icon txcoord__check-icon--overdue" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 4v4M8 11h.01" stroke-linecap="round"/></svg>';
+          return '<svg class="txcoord__check-icon txcoord__check-icon--overdue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 00.708.852h.058a.75.75 0 00.354-.149l.041-.02M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>';
         default:
           return '<div class="txcoord__check-icon txcoord__check-icon--pending"></div>';
       }
@@ -5848,7 +5835,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="txcoord__checklist-item-task">${item.task}</span>
             <span class="txcoord__checklist-item-due ${item.status === 'overdue' ? 'txcoord__checklist-item-due--overdue' : ''}">Due ${item.due}</span>
           </div>
-          ${item.doc ? '<svg class="txcoord__doc-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1H4a1 1 0 00-1 1v10a1 1 0 001 1h6a1 1 0 001-1V4L8 1z" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 1v3h3M5 7h4M5 9.5h4" stroke-linecap="round" stroke-linejoin="round"/></svg>' : ''}
+          ${item.doc ? '<svg class="txcoord__doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"/></svg>' : ''}
         </div>
       `).join('');
   
@@ -6234,7 +6221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="exec__thinking">
           <div class="exec__thinking-icon uni-pulse-ring">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <span class="exec__thinking-text">Analyzing feedback patterns and building your plan...</span>
@@ -6552,8 +6539,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="wealth__tx-insight">
           <div class="wealth__tx-insight-icon">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M8 1a7 7 0 100 14A7 7 0 008 1zM8 5v3M8 10.5h.01" stroke-linecap="round"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 00.708.852h.058a.75.75 0 00.354-.149l.041-.02M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <span class="wealth__tx-insight-text">You spent <strong>23% more on dining out</strong> this month compared to last month. That's $98 more than February's average. Consider meal prepping on Sundays to cut dining costs.</span>
@@ -6613,8 +6600,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="wealth__goal-recommendation">
           <div class="wealth__goal-recommendation-icon">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M8 1l2 4 4.5.6-3.3 3.2.8 4.5L8 11l-4 2.3.8-4.5L1.5 5.6 6 5l2-4z" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <span class="wealth__goal-recommendation-text">Increase your emergency fund contribution by <strong>$50/month</strong> to hit your target <strong>2 months earlier</strong> (Sep 2026 instead of Nov 2026). You can offset this by reducing dining out by one meal per week.</span>
@@ -6955,7 +6942,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <p class="trend__item-desc">${item.description}</p>
             <div class="trend__item-audio">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M5 5.5v5M11 4.5v7M2 7v2M14 6v4" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-1.298-3.36l2.25-.644V12.553zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-1.298-3.36l2.25-.644V15.553z" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span>${item.audio}</span>
             </div>
             <button class="trend__use-btn">Use This Format</button>
@@ -7096,7 +7083,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="perf__post">
         <div class="perf__post-rank">${i + 1}</div>
         <div class="perf__post-thumb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm12.75-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="perf__post-info">
           <span class="perf__post-caption">${p.caption}</span>
@@ -7147,7 +7134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Your <strong>educational content</strong> gets 3x more saves than entertainment posts. Reels posted on <strong>Tuesday &amp; Thursday at 11am</strong> consistently outperform other time slots by 40%. Focus on actionable tips with bold hooks for maximum reach.
       </div>
       <div class="perf__best-time">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Best posting time: <strong>Tuesday &amp; Thursday, 11am</strong></span>
       </div>
     </div>`;
@@ -7179,7 +7166,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="journal__prompt-area">
         <div class="journal__ai-prompt">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v4M8 11v4M1 8h4M11 8h4M3.05 3.05l2.83 2.83M10.12 10.12l2.83 2.83M3.05 12.95l2.83-2.83M10.12 5.88l2.83-2.83" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423L16.5 15.75l.394 1.183a2.25 2.25 0 001.423 1.423L19.5 18.75l-1.183.394a2.25 2.25 0 00-1.423 1.423z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p>Yesterday you mentioned feeling overwhelmed at work. Let's dig deeper &mdash; what specifically triggered that feeling? Was it a particular task, a conversation, or something building up over time?</p>
         </div>
         <div class="journal__prev-prompt">
@@ -7299,7 +7286,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="reflect__thinking">
         <div class="reflect__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="reflect__thinking-text">Finding patterns in your reflections...</span>
@@ -7475,7 +7462,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ${weekBarsHtml}
       </div>
       <div class="streak__encouragement">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1l2.09 4.26L15 5.95l-3.5 3.41L12.18 14 8 11.77 3.82 14l.68-4.64L1 5.95l4.91-.69L8 1z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>You're building a powerful habit. Consistency matters more than perfection &mdash; even a few sentences count. Keep showing up for yourself.</span>
       </div>
     </div>`;
@@ -7496,8 +7483,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="pulse__thinking pulse__thinking--long">
         <div class="pulse__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span class="pulse__thinking-text">Compiling data from all sources and generating your report...</span>
@@ -7627,7 +7613,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sourceIcons = {
       calendar: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="12" rx="1.5"/><path d="M5 1.5v3M11 1.5v3M2 7h12" stroke-linecap="round"/></svg>',
       task: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8.5l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-      chat: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 10a1.5 1.5 0 01-1.5 1.5H5L2 14.5v-11A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5V10z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m3.75 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332c1.972-.049 3.918-.217 5.831-.497 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       dollar: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v14M11 4H6.5a2.5 2.5 0 000 5h3a2.5 2.5 0 010 5H5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     };
   
@@ -7737,7 +7723,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="template__brand-row">
           <span class="template__brand-field-label">Logo</span>
           <div class="template__logo-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm12.75-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>Upload logo</span>
           </div>
         </div>
@@ -7829,7 +7815,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <div class="scheduler__next-report">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Next scheduled report: <strong>March 1, 2025 at 9:00 AM</strong></span>
       </div>
       <div class="scheduler__history-section">
