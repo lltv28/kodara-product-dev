@@ -124,6 +124,7 @@ html, body {
   height: 100vh;
   overflow: hidden;
   background: var(--white);
+  color: var(--alpha-light-600);
   position: relative;
 }
 
@@ -174,6 +175,7 @@ html, body {
   font-size: 14px;
   white-space: nowrap;
   flex: 1;
+  color: var(--alpha-light-600);
 }
 
 .sidebar-user-chevron {
