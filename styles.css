@@ -17501,6 +17501,23 @@ html, body {
   opacity: 1;
 }
 
+/* --- Dark mode body background for specific demos --- */
+body:has(.app-frame[data-demo="salescoach"]),
+body:has(.app-frame[data-demo="influencer"]) {
+  background: #0f0f0f;
+  color-scheme: dark;
+}
+
+/* Dark mode scrollbar overrides */
+.app-frame[data-demo="salescoach"] ::-webkit-scrollbar-thumb,
+.app-frame[data-demo="influencer"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+.app-frame[data-demo="salescoach"] ::-webkit-scrollbar-thumb:hover,
+.app-frame[data-demo="influencer"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 /* --- Tablet: max-width 1024px --- */
 @media (max-width: 1024px) {
   :root {
