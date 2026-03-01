@@ -111,7 +111,7 @@ html, body {
   line-height: 20px;
   letter-spacing: -0.15px;
   color: var(--alpha-light-600);
-  background: var(--color-background, var(--white));
+  background: var(--white);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -123,14 +123,14 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: var(--color-background, var(--white));
+  background: var(--white);
   position: relative;
 }
 
 /* --- Sidebar --- */
 .sidebar {
   width: var(--sidebar-width);
-  background: var(--color-background, var(--white));
+  background: var(--white);
   padding: 8px 0 8px 8px;
   flex-shrink: 0;
   display: flex;
@@ -195,7 +195,7 @@ html, body {
   left: 8px;
   right: 8px;
   z-index: 50;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-radius: 16px;
   box-shadow: var(--shadow-modal);
@@ -531,13 +531,13 @@ html, body {
   line-height: 40px;
   letter-spacing: -0.5px;
   font-weight: 400;
-  color: var(--color-text-primary, var(--black));
+  color: var(--black);
   text-align: center;
 }
 
 /* --- Chat Input Card --- */
 .chat-input-card {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-radius: 24px;
   box-shadow: var(--shadow-card);
@@ -647,7 +647,7 @@ html, body {
 
 /* Mic Button */
 .icon-btn--mic {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-radius: 24px;
   box-shadow: var(--shadow-card);
@@ -1051,7 +1051,6 @@ html, body {
 }
 
 .settings-title {
-  font-family: var(--font-family-heading, var(--font-family-body));
   font-size: 20px;
   line-height: 28px;
   font-weight: 500;
@@ -1254,7 +1253,7 @@ html, body {
    ======================================================== */
 
 .chat-response-card {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-radius: 16px;
   box-shadow: var(--shadow-card);
@@ -1326,7 +1325,7 @@ html, body {
 }
 
 .toggle-pill__btn--active {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   color: var(--alpha-light-900);
   box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
 }
@@ -1600,7 +1599,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .habit-stat--streak {
@@ -1921,7 +1920,7 @@ html, body {
   position: absolute;
   width: 16px;
   height: 16px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border-radius: 999px;
   top: 2px;
   left: 2px;
@@ -2662,7 +2661,7 @@ html, body {
 }
 
 .competitor__filter-btn--active {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border-color: var(--alpha-light-100);
   color: var(--alpha-light-900);
   box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
@@ -2902,7 +2901,7 @@ html, body {
 }
 
 .ad-gen__tab--active {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   color: var(--alpha-light-900);
   box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
 }
@@ -3536,7 +3535,7 @@ html, body {
   appearance: none;
   width: 12px;
   height: 12px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border-radius: 999px;
   border: none;
   cursor: pointer;
@@ -3545,7 +3544,7 @@ html, body {
 .video-diagnostic__volume-slider::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border-radius: 999px;
   border: none;
   cursor: pointer;
@@ -3788,7 +3787,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .pm-hub__stat-number {
@@ -3954,7 +3953,7 @@ html, body {
   flex-direction: column;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   align-items: center;
 }
 
@@ -4380,7 +4379,7 @@ html, body {
    ======================================================== */
 
 .watchdog-card {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-left: 3px solid color-mix(in srgb, var(--color-primary) 50%, transparent);
   border-radius: 16px;
@@ -4695,7 +4694,7 @@ html, body {
   align-items: center;
   gap: 4px;
   padding: 16px 12px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   text-align: center;
 }
 
@@ -4897,7 +4896,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .session__stat-number {
@@ -6391,7 +6390,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 10px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .email-seq__stat-value {
@@ -7342,7 +7341,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 14px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .campaign-dash__top-metric-value {
@@ -7969,7 +7968,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 14px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .biz-dash__metric-value {
@@ -8741,7 +8740,7 @@ html, body {
   color: var(--alpha-light-900);
   line-height: 20px;
   letter-spacing: -0.15px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-radius: 8px;
   resize: vertical;
@@ -9251,7 +9250,7 @@ html, body {
   font-weight: 400;
   color: var(--alpha-light-900);
   line-height: 20px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-radius: 8px;
   resize: none;
@@ -9288,7 +9287,7 @@ html, body {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 2px solid var(--alpha-brand-950);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -9298,7 +9297,7 @@ html, body {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 2px solid var(--alpha-brand-950);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -9479,7 +9478,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .progress-tl__stat-number {
@@ -9888,7 +9887,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .callhist__summary-number {
@@ -10213,7 +10212,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 10px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .cma__subject-stat-value {
@@ -10296,7 +10295,7 @@ html, body {
   font-weight: 600;
   color: #0891b2;
   white-space: nowrap;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   padding: 2px 6px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -10682,7 +10681,7 @@ html, body {
   align-items: center;
   gap: 4px;
   padding: 14px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .market__metric-label {
@@ -10895,7 +10894,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   gap: 2px;
 }
 
@@ -11123,7 +11122,7 @@ html, body {
   height: 10px;
   border-radius: 999px;
   border: 2px solid var(--alpha-light-200);
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   flex-shrink: 0;
 }
 
@@ -11502,7 +11501,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   gap: 2px;
 }
 
@@ -12369,7 +12368,7 @@ html, body {
 }
 
 .wealth__tx-filter--active {
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border-color: var(--alpha-light-100);
   color: var(--alpha-light-900);
   box-shadow: 0px 1px 2px rgba(0,0,0,0.06);
@@ -13370,7 +13369,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .perf__metric-value {
@@ -13652,7 +13651,7 @@ html, body {
   width: 100%;
   min-height: 140px;
   padding: 16px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid var(--alpha-light-100);
   border-radius: 12px;
   font-family: inherit;
@@ -14151,7 +14150,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .streak__stat-value {
@@ -14548,7 +14547,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .activity__summary-value {
@@ -14751,7 +14750,7 @@ html, body {
 .template__toggle-thumb {
   width: 16px;
   height: 16px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border-radius: 999px;
   position: absolute;
   top: 2px;
@@ -16158,7 +16157,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .biz-qb__stat-label {
@@ -16564,7 +16563,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .biz-delegated__summary-num {
@@ -16786,7 +16785,7 @@ html, body {
   color: rgba(26, 26, 26, 0.88);
   line-height: 20px;
   letter-spacing: -0.15px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 1px solid rgba(26, 26, 26, 0.09);
   border-radius: 8px;
   resize: vertical;
@@ -17143,7 +17142,7 @@ html, body {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -17153,7 +17152,7 @@ html, body {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -17199,7 +17198,7 @@ html, body {
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
 }
 
 .sage-timeline__trend-label {
@@ -17400,7 +17399,7 @@ html, body {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -17410,7 +17409,7 @@ html, body {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: var(--color-surface, var(--white));
+  background: var(--white);
   border: 2px solid var(--color-primary);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
