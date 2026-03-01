@@ -17531,6 +17531,12 @@ body:has(.app-frame[data-demo="influencer"]) {
   box-shadow: inset 0px 0px 3px rgba(255,255,255,0.12);
 }
 
+/* Dark mode: highlighted suggestion card */
+.app-frame[data-demo="salescoach"] .suggestion-card--highlighted,
+.app-frame[data-demo="influencer"] .suggestion-card--highlighted {
+  background: rgba(255, 255, 255, 0.14);
+}
+
 /* Dark mode: demo dropdown avatar text stays white */
 .app-frame[data-demo="salescoach"] .demo-dropdown__item-avatar,
 .app-frame[data-demo="influencer"] .demo-dropdown__item-avatar {
