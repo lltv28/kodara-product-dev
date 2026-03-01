@@ -6,6 +6,9 @@
    Activated via [data-demo="<id>"] on .app-frame
    ======================================================== */
 
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Merriweather:wght@400;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Atkinson+Hyperlegible:wght@400;700&family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@400;700&family=Sora:wght@400;500;600;700&family=Karla:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Bitter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Commissioner:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Epilogue:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Vollkorn:wght@400;500;600;700&family=Cabin:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&family=Jost:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap');
+
 /* --------------------------------------------------------
    GLOBAL FOUNDATIONS
    Shared across all demos — structural tokens only
@@ -25,14 +28,6 @@
   --space-11: 2.75rem;  /* 44px */
   --space-12: 3rem;     /* 48px */
 
-  /* --- Border Radius --- */
-  --radius-sm: 0.25rem;   /* 4px */
-  --radius-md: 0.5rem;    /* 8px */
-  --radius-lg: 0.75rem;   /* 12px */
-  --radius-xl: 1rem;      /* 16px */
-  --radius-2xl: 1.5rem;   /* 24px */
-  --radius-full: 999px;
-
   /* --- Container --- */
   --container-max-width: 720px;
   --grid-gap: 1rem;
@@ -49,14 +44,14 @@
   /* --bp-xl: 1280px */
 
   /* --- Typography Scale (fluid with clamp) --- */
-  --font-size-xs: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);        /* ~11-12px */
-  --font-size-sm: clamp(0.8125rem, 0.775rem + 0.15vw, 0.875rem);      /* ~13-14px */
-  --font-size-base: clamp(0.875rem, 0.825rem + 0.2vw, 1rem);          /* ~14-16px */
-  --font-size-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);          /* ~18-20px */
-  --font-size-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);             /* ~20-24px */
-  --font-size-2xl: clamp(1.5rem, 1.3rem + 0.7vw, 1.875rem);           /* ~24-30px */
-  --font-size-3xl: clamp(1.75rem, 1.5rem + 0.9vw, 2.25rem);           /* ~28-36px */
-  --font-size-4xl: clamp(2rem, 1.7rem + 1.1vw, 2.75rem);              /* ~32-44px */
+  --font-size-xs: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);
+  --font-size-sm: clamp(0.8125rem, 0.775rem + 0.15vw, 0.875rem);
+  --font-size-base: clamp(0.875rem, 0.825rem + 0.2vw, 1rem);
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.3rem + 0.7vw, 1.875rem);
+  --font-size-3xl: clamp(1.75rem, 1.5rem + 0.9vw, 2.25rem);
+  --font-size-4xl: clamp(2rem, 1.7rem + 1.1vw, 2.75rem);
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -71,14 +66,14 @@
   --letter-spacing-wide: 0.02em;
 }
 
-/* --------------------------------------------------------
-   DEFAULT THEME (Marcus Fitness — Personal Trainer)
-   Bold, energetic fitness: deep charcoal + electric green
-   -------------------------------------------------------- */
+/* ================================================================
+   DEMO 1: MARCUS FITNESS — Personal Trainer
+   Bold energetic fitness: charcoal + electric green, geometric
+   ================================================================ */
 :root,
 [data-demo="marcus"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-heading: 'Oswald', system-ui, sans-serif;
+  --font-family-body: 'Inter', system-ui, sans-serif;
 
   --color-primary: #0a6b43;
   --color-primary-light: #10b981;
@@ -94,160 +89,100 @@
   --color-error: #dc2626;
   --color-border: #e5e7eb;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --radius-sm: 0.125rem;  /* 2px — sharp geometric */
+  --radius-md: 0.25rem;   /* 4px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.12), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
 }
 
-/* --------------------------------------------------------
-   LUCAS AI — Media Buyer
-   Professional, data-driven: slate + vibrant blue + green accents
-   -------------------------------------------------------- */
+/* ================================================================
+   DEMO 2: LUCAS AI — Media Buyer
+   Professional data-driven: slate + cobalt blue, clean cards
+   ================================================================ */
 [data-demo="lucas"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-family-body: 'Outfit', system-ui, sans-serif;
 
   --color-primary: #1d4ed8;
   --color-primary-light: #3b82f6;
   --color-primary-dark: #1e3a8a;
   --color-secondary: #10b981;
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
   --color-text-primary: #0f172a;
   --color-text-secondary: #64748b;
   --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
+  --color-success: #16a34a;
+  --color-warning: #ca8a04;
   --color-error: #dc2626;
   --color-border: #e2e8f0;
 
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.25rem;  /* 20px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 20px -5px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
 }
 
-/* --------------------------------------------------------
-   ALEX RIVERA — Mindset Coach
-   Warm, approachable: soft purples + warm highlights
-   -------------------------------------------------------- */
+/* ================================================================
+   DEMO 3: ALEX RIVERA — Mindset Coach
+   Warm approachable: soft amber/terracotta + gentle warmth
+   ================================================================ */
 [data-demo="alex"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-heading: 'Poppins', system-ui, sans-serif;
+  --font-family-body: 'Merriweather', Georgia, serif;
 
-  --color-primary: #7c3aed;
-  --color-primary-light: #a78bfa;
-  --color-primary-dark: #5b21b6;
-  --color-secondary: #f59e0b;
-  --color-background: #ffffff;
-  --color-surface: #faf5ff;
-  --color-text-primary: #1c1917;
+  --color-primary: #b45309;
+  --color-primary-light: #d97706;
+  --color-primary-dark: #92400e;
+  --color-secondary: #7c3aed;
+  --color-background: #fffbf5;
+  --color-surface: #fef7ed;
+  --color-text-primary: #292524;
   --color-text-secondary: #78716c;
   --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
+  --color-success: #16a34a;
+  --color-warning: #ca8a04;
   --color-error: #dc2626;
   --color-border: #e7e5e4;
 
-  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.06), 0 2px 4px -2px rgba(28, 25, 23, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.07), 0 4px 6px -4px rgba(28, 25, 23, 0.03);
+  --radius-sm: 0.5rem;    /* 8px — soft rounded */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.5rem;    /* 24px */
+  --radius-2xl: 2rem;     /* 32px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 3px rgba(180, 83, 9, 0.06);
+  --shadow-md: 0 6px 16px -4px rgba(180, 83, 9, 0.08), 0 2px 6px -2px rgba(180, 83, 9, 0.04);
+  --shadow-lg: 0 16px 32px -8px rgba(180, 83, 9, 0.1), 0 4px 8px -4px rgba(180, 83, 9, 0.04);
 }
 
-/* --------------------------------------------------------
-   NATHAN CROSS — Business Operations
-   Trustworthy, corporate: navy + blue accents + clean
-   -------------------------------------------------------- */
+/* ================================================================
+   DEMO 4: NATHAN CROSS — Business Operations
+   Corporate trustworthy: deep navy + steel blue, structured
+   ================================================================ */
 [data-demo="nathan"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+  --font-family-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-family-body: 'IBM Plex Sans', system-ui, sans-serif;
 
   --color-primary: #1e3a5f;
   --color-primary-light: #3b82f6;
   --color-primary-dark: #172554;
   --color-secondary: #0ea5e9;
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #64748b;
-  --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #e2e8f0;
-
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-}
-
-/* --------------------------------------------------------
-   MIKE AI — Copywriting AI
-   Creative, bold: rich purple + vibrant energy
-   -------------------------------------------------------- */
-[data-demo="mike"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
-
-  --color-primary: #7c3aed;
-  --color-primary-light: #a78bfa;
-  --color-primary-dark: #5b21b6;
-  --color-secondary: #ec4899;
-  --color-background: #ffffff;
-  --color-surface: #faf5ff;
-  --color-text-primary: #1e1b4b;
-  --color-text-secondary: #6b7280;
-  --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #e9d5ff;
-
-  --shadow-sm: 0 1px 2px rgba(30, 27, 75, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(30, 27, 75, 0.07), 0 2px 4px -2px rgba(30, 27, 75, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(30, 27, 75, 0.08), 0 4px 6px -4px rgba(30, 27, 75, 0.03);
-}
-
-/* --------------------------------------------------------
-   COACH FLEX — Personal Trainer (alt)
-   Energetic fitness: bright emerald + high-energy accents
-   -------------------------------------------------------- */
-[data-demo="trainer"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
-
-  --color-primary: #059669;
-  --color-primary-light: #34d399;
-  --color-primary-dark: #047857;
-  --color-secondary: #f97316;
-  --color-background: #ffffff;
-  --color-surface: #f0fdf4;
-  --color-text-primary: #14532d;
-  --color-text-secondary: #6b7280;
-  --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #d1fae5;
-
-  --shadow-sm: 0 1px 2px rgba(5, 150, 105, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(5, 150, 105, 0.08), 0 2px 4px -2px rgba(5, 150, 105, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.1), 0 4px 6px -4px rgba(5, 150, 105, 0.04);
-}
-
-/* --------------------------------------------------------
-   NEXUS AI — Business Consultant
-   Executive polish: deep navy + blue gradient + authority
-   -------------------------------------------------------- */
-[data-demo="bizconsult"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
-
-  --color-primary: #1e3a5f;
-  --color-primary-light: #3b82f6;
-  --color-primary-dark: #0f172a;
-  --color-secondary: #06b6d4;
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
+  --color-background: #f1f5f9;
+  --color-surface: #ffffff;
   --color-text-primary: #0f172a;
   --color-text-secondary: #64748b;
   --color-text-on-primary: #ffffff;
@@ -256,241 +191,236 @@
   --color-error: #dc2626;
   --color-border: #cbd5e1;
 
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --radius-sm: 0.25rem;   /* 4px — crisp corporate */
+  --radius-md: 0.375rem;  /* 6px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 2px 8px -2px rgba(15, 23, 42, 0.12), 0 1px 3px -1px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 8px 24px -6px rgba(15, 23, 42, 0.15), 0 2px 6px -2px rgba(15, 23, 42, 0.06);
 }
 
-/* --------------------------------------------------------
-   SAGE AI — Mindset & Relationship Coach
-   Spiritual, calming: violet gradients + soft warmth
-   -------------------------------------------------------- */
-[data-demo="mindset"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+/* ================================================================
+   DEMO 5: MIKE AI — Copywriting AI
+   Creative bold: rich magenta/fuchsia + vibrant energy
+   ================================================================ */
+[data-demo="mike"] {
+  --font-family-heading: 'Sora', system-ui, sans-serif;
+  --font-family-body: 'Karla', system-ui, sans-serif;
 
-  --color-primary: #7c3aed;
-  --color-primary-light: #c084fc;
-  --color-primary-dark: #5b21b6;
-  --color-secondary: #f472b6;
-  --color-background: #ffffff;
-  --color-surface: #faf5ff;
+  --color-primary: #a21caf;
+  --color-primary-light: #d946ef;
+  --color-primary-dark: #86198f;
+  --color-secondary: #f59e0b;
+  --color-background: #fdf4ff;
+  --color-surface: #fae8ff;
   --color-text-primary: #1e1b4b;
   --color-text-secondary: #6b7280;
   --color-text-on-primary: #ffffff;
-  --color-success: #059669;
+  --color-success: #16a34a;
   --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #e9d5ff;
+  --color-error: #e11d48;
+  --color-border: #f0abfc;
 
-  --shadow-sm: 0 1px 2px rgba(91, 33, 182, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(91, 33, 182, 0.07), 0 2px 4px -2px rgba(91, 33, 182, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(91, 33, 182, 0.08), 0 4px 6px -4px rgba(91, 33, 182, 0.03);
+  --radius-sm: 0.75rem;   /* 12px — playful rounded */
+  --radius-md: 1rem;      /* 16px */
+  --radius-lg: 1.25rem;   /* 20px */
+  --radius-xl: 1.5rem;    /* 24px */
+  --radius-2xl: 2rem;     /* 32px */
+  --radius-full: 999px;
+
+  --shadow-sm: 2px 2px 0px rgba(162, 28, 175, 0.08);
+  --shadow-md: 3px 3px 0px rgba(162, 28, 175, 0.1), 1px 1px 0px rgba(162, 28, 175, 0.06);
+  --shadow-lg: 5px 5px 0px rgba(162, 28, 175, 0.12), 2px 2px 0px rgba(162, 28, 175, 0.06);
 }
 
-/* --------------------------------------------------------
-   CLOSER AI — Sales Call Coach
-   High-energy sales: bold red/orange + conversion focus
-   -------------------------------------------------------- */
-[data-demo="salescoach"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+/* ================================================================
+   DEMO 6: COACH FLEX — Personal Trainer (alt)
+   High-energy fitness: vivid orange + dark slate, punchy
+   ================================================================ */
+[data-demo="trainer"] {
+  --font-family-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-family-body: 'DM Sans', system-ui, sans-serif;
 
-  --color-primary: #dc2626;
-  --color-primary-light: #f87171;
-  --color-primary-dark: #991b1b;
-  --color-secondary: #f97316;
-  --color-background: #ffffff;
-  --color-surface: #fef2f2;
+  --color-primary: #ea580c;
+  --color-primary-light: #fb923c;
+  --color-primary-dark: #c2410c;
+  --color-secondary: #0d9488;
+  --color-background: #f5f1ee;
+  --color-surface: #faf7f5;
   --color-text-primary: #1c1917;
   --color-text-secondary: #78716c;
   --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #fecaca;
+  --color-success: #22c55e;
+  --color-warning: #ca8a04;
+  --color-error: #ef4444;
+  --color-border: #e7e5e4;
 
-  --shadow-sm: 0 1px 2px rgba(220, 38, 38, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(220, 38, 38, 0.07), 0 2px 4px -2px rgba(220, 38, 38, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(220, 38, 38, 0.08), 0 4px 6px -4px rgba(220, 38, 38, 0.03);
+  --radius-sm: 0.25rem;   /* 4px — modern angular */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.625rem;  /* 10px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 2px 4px rgba(234, 88, 12, 0.06);
+  --shadow-md: 0 4px 12px -2px rgba(234, 88, 12, 0.1), 0 2px 4px rgba(234, 88, 12, 0.05);
+  --shadow-lg: 0 8px 24px -4px rgba(234, 88, 12, 0.13), 0 4px 8px rgba(234, 88, 12, 0.06);
 }
 
-/* --------------------------------------------------------
-   PROPVAL AI — Real Estate CMA Expert
-   Sophisticated, grounded: teal + warm neutrals
-   -------------------------------------------------------- */
-[data-demo="realestate"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+/* ================================================================
+   DEMO 7: NEXUS AI — Business Consultant
+   Executive polish: charcoal + teal accent, minimal
+   ================================================================ */
+[data-demo="bizconsult"] {
+  --font-family-heading: 'Fraunces', Georgia, serif;
+  --font-family-body: 'Commissioner', system-ui, sans-serif;
 
-  --color-primary: #0891b2;
-  --color-primary-light: #22d3ee;
-  --color-primary-dark: #0e7490;
-  --color-secondary: #059669;
-  --color-background: #ffffff;
-  --color-surface: #f0fdfa;
-  --color-text-primary: #134e4a;
-  --color-text-secondary: #6b7280;
-  --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #ccfbf1;
-
-  --shadow-sm: 0 1px 2px rgba(8, 145, 178, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(8, 145, 178, 0.07), 0 2px 4px -2px rgba(8, 145, 178, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(8, 145, 178, 0.08), 0 4px 6px -4px rgba(8, 145, 178, 0.03);
-}
-
-/* --------------------------------------------------------
-   DEALFLOW AI — Transaction Coordinator
-   Organized, reliable: teal/mint + clear structure
-   -------------------------------------------------------- */
-[data-demo="txcoord"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
-
-  --color-primary: #0d9488;
-  --color-primary-light: #2dd4bf;
-  --color-primary-dark: #0f766e;
+  --color-primary: #115e59;
+  --color-primary-light: #14b8a6;
+  --color-primary-dark: #0f4c47;
   --color-secondary: #6366f1;
-  --color-background: #ffffff;
-  --color-surface: #f0fdfa;
-  --color-text-primary: #134e4a;
-  --color-text-secondary: #6b7280;
+  --color-background: #f0fdfa;
+  --color-surface: #ffffff;
+  --color-text-primary: #0c3c38;
+  --color-text-secondary: #5a7a76;
   --color-text-on-primary: #ffffff;
   --color-success: #059669;
   --color-warning: #d97706;
   --color-error: #dc2626;
   --color-border: #99f6e4;
 
-  --shadow-sm: 0 1px 2px rgba(13, 148, 136, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(13, 148, 136, 0.07), 0 2px 4px -2px rgba(13, 148, 136, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(13, 148, 136, 0.08), 0 4px 6px -4px rgba(13, 148, 136, 0.03);
+  --radius-sm: 0.1875rem;  /* 3px — refined minimal */
+  --radius-md: 0.3125rem;  /* 5px */
+  --radius-lg: 0.4375rem;  /* 7px */
+  --radius-xl: 0.625rem;   /* 10px */
+  --radius-2xl: 0.875rem;  /* 14px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(17, 94, 89, 0.05);
+  --shadow-md: 0 3px 10px -3px rgba(17, 94, 89, 0.08), 0 1px 3px -1px rgba(17, 94, 89, 0.04);
+  --shadow-lg: 0 10px 30px -8px rgba(17, 94, 89, 0.1), 0 3px 8px -3px rgba(17, 94, 89, 0.05);
 }
 
-/* --------------------------------------------------------
-   LEADIQ AI — Executive Leadership Coach
-   Authoritative, refined: deep indigo + subtle violet
-   -------------------------------------------------------- */
-[data-demo="executive"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+/* ================================================================
+   DEMO 8: SAGE AI — Mindset & Relationship Coach
+   Spiritual calming: deep violet + lavender mist, soft dreamy
+   ================================================================ */
+[data-demo="mindset"] {
+  --font-family-heading: 'DM Sans', system-ui, sans-serif;
+  --font-family-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
 
-  --color-primary: #4338ca;
-  --color-primary-light: #818cf8;
-  --color-primary-dark: #312e81;
-  --color-secondary: #0ea5e9;
-  --color-background: #ffffff;
-  --color-surface: #eef2ff;
+  --color-primary: #6d28d9;
+  --color-primary-light: #a78bfa;
+  --color-primary-dark: #5b21b6;
+  --color-secondary: #ec4899;
+  --color-background: #faf5ff;
+  --color-surface: #f3e8ff;
   --color-text-primary: #1e1b4b;
-  --color-text-secondary: #6b7280;
+  --color-text-secondary: #7c7399;
   --color-text-on-primary: #ffffff;
   --color-success: #059669;
   --color-warning: #d97706;
   --color-error: #dc2626;
-  --color-border: #c7d2fe;
+  --color-border: #ddd6fe;
 
-  --shadow-sm: 0 1px 2px rgba(67, 56, 202, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(67, 56, 202, 0.07), 0 2px 4px -2px rgba(67, 56, 202, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(67, 56, 202, 0.08), 0 4px 6px -4px rgba(67, 56, 202, 0.03);
+  --radius-sm: 0.625rem;   /* 10px — very soft */
+  --radius-md: 0.875rem;   /* 14px */
+  --radius-lg: 1.25rem;    /* 20px */
+  --radius-xl: 1.75rem;    /* 28px */
+  --radius-2xl: 2.5rem;    /* 40px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(109, 40, 217, 0.06);
+  --shadow-md: 0 6px 20px -4px rgba(109, 40, 217, 0.1), 0 2px 8px -2px rgba(109, 40, 217, 0.05);
+  --shadow-lg: 0 16px 40px -8px rgba(109, 40, 217, 0.12), 0 6px 12px -4px rgba(109, 40, 217, 0.06);
 }
 
-/* --------------------------------------------------------
-   WEALTHIQ AI — Financial Coach
-   Trust and stability: emerald green + clean neutrals
-   -------------------------------------------------------- */
-[data-demo="finance"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+/* ================================================================
+   DEMO 9: CLOSER AI — Sales Call Coach
+   High-energy sales: crimson red + charcoal, bold sharp
+   ================================================================ */
+[data-demo="salescoach"] {
+  --font-family-heading: 'Bitter', Georgia, serif;
+  --font-family-body: 'Open Sans', system-ui, sans-serif;
 
-  --color-primary: #059669;
-  --color-primary-light: #34d399;
-  --color-primary-dark: #047857;
-  --color-secondary: #0ea5e9;
-  --color-background: #ffffff;
-  --color-surface: #f0fdf4;
-  --color-text-primary: #14532d;
-  --color-text-secondary: #6b7280;
-  --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #d1fae5;
-
-  --shadow-sm: 0 1px 2px rgba(5, 150, 105, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(5, 150, 105, 0.07), 0 2px 4px -2px rgba(5, 150, 105, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.08), 0 4px 6px -4px rgba(5, 150, 105, 0.03);
-}
-
-/* --------------------------------------------------------
-   VIRALMIND AI — Content & Reel Coach
-   Vibrant, expressive: rose/pink + creative energy
-   -------------------------------------------------------- */
-[data-demo="influencer"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
-
-  --color-primary: #e11d48;
-  --color-primary-light: #fb7185;
-  --color-primary-dark: #be123c;
-  --color-secondary: #8b5cf6;
-  --color-background: #ffffff;
-  --color-surface: #fff1f2;
+  --color-primary: #b91c1c;
+  --color-primary-light: #ef4444;
+  --color-primary-dark: #991b1b;
+  --color-secondary: #f97316;
+  --color-background: #fef2f2;
+  --color-surface: #ffffff;
   --color-text-primary: #1c1917;
   --color-text-secondary: #78716c;
   --color-text-on-primary: #ffffff;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --color-border: #fecdd3;
+  --color-success: #15803d;
+  --color-warning: #ca8a04;
+  --color-error: #b91c1c;
+  --color-border: #fecaca;
 
-  --shadow-sm: 0 1px 2px rgba(225, 29, 72, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(225, 29, 72, 0.07), 0 2px 4px -2px rgba(225, 29, 72, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(225, 29, 72, 0.08), 0 4px 6px -4px rgba(225, 29, 72, 0.03);
+  --radius-sm: 0.1875rem;  /* 3px — sharp aggressive */
+  --radius-md: 0.25rem;    /* 4px */
+  --radius-lg: 0.375rem;   /* 6px */
+  --radius-xl: 0.5rem;     /* 8px */
+  --radius-2xl: 0.75rem;   /* 12px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(185, 28, 28, 0.06), 2px 0 0 rgba(185, 28, 28, 0.03);
+  --shadow-md: 0 4px 8px -2px rgba(185, 28, 28, 0.1), 3px 0 0 rgba(185, 28, 28, 0.04);
+  --shadow-lg: 0 8px 20px -4px rgba(185, 28, 28, 0.14), 4px 0 0 rgba(185, 28, 28, 0.05);
 }
 
-/* --------------------------------------------------------
-   REFLECT AI — Guided Journaling Coach
-   Serene, contemplative: lavender + warm accents
-   -------------------------------------------------------- */
-[data-demo="journal"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+/* ================================================================
+   DEMO 10: PROPVAL AI — Real Estate CMA Expert
+   Sophisticated editorial: warm cyan + ivory neutrals
+   ================================================================ */
+[data-demo="realestate"] {
+  --font-family-heading: 'Playfair Display', Georgia, serif;
+  --font-family-body: 'Lato', system-ui, sans-serif;
 
-  --color-primary: #7c3aed;
-  --color-primary-light: #c084fc;
-  --color-primary-dark: #6d28d9;
-  --color-secondary: #f59e0b;
-  --color-background: #ffffff;
-  --color-surface: #faf5ff;
-  --color-text-primary: #1e1b4b;
+  --color-primary: #0e7490;
+  --color-primary-light: #22d3ee;
+  --color-primary-dark: #155e75;
+  --color-secondary: #92400e;
+  --color-background: #fefce8;
+  --color-surface: #fffef5;
+  --color-text-primary: #164e63;
   --color-text-secondary: #6b7280;
   --color-text-on-primary: #ffffff;
   --color-success: #059669;
   --color-warning: #d97706;
   --color-error: #dc2626;
-  --color-border: #e9d5ff;
+  --color-border: #a5f3fc;
 
-  --shadow-sm: 0 1px 2px rgba(124, 58, 237, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(124, 58, 237, 0.06), 0 2px 4px -2px rgba(124, 58, 237, 0.03);
-  --shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.07), 0 4px 6px -4px rgba(124, 58, 237, 0.03);
+  --radius-sm: 0.125rem;   /* 2px — editorial crisp */
+  --radius-md: 0.1875rem;  /* 3px */
+  --radius-lg: 0.3125rem;  /* 5px */
+  --radius-xl: 0.5rem;     /* 8px */
+  --radius-2xl: 0.75rem;   /* 12px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 3px rgba(14, 116, 144, 0.04);
+  --shadow-md: 0 2px 6px -1px rgba(14, 116, 144, 0.06), 0 1px 2px rgba(14, 116, 144, 0.03);
+  --shadow-lg: 0 6px 16px -4px rgba(14, 116, 144, 0.08), 0 2px 4px rgba(14, 116, 144, 0.04);
 }
 
-/* --------------------------------------------------------
-   PULSE AI — Progress Report Generator
-   Editorial, structured: navy + data-focused blue
-   -------------------------------------------------------- */
-[data-demo="reporter"] {
-  --font-family-heading: 'Instrument Sans', system-ui, sans-serif;
-  --font-family-body: 'Instrument Sans', system-ui, sans-serif;
+/* ================================================================
+   DEMO 11: DEALFLOW AI — Transaction Coordinator
+   Organized reliable: steel blue/slate + structured clean
+   ================================================================ */
+[data-demo="txcoord"] {
+  --font-family-heading: 'Work Sans', system-ui, sans-serif;
+  --font-family-body: 'Libre Franklin', system-ui, sans-serif;
 
-  --color-primary: #1e3a5f;
-  --color-primary-light: #60a5fa;
-  --color-primary-dark: #172554;
-  --color-secondary: #8b5cf6;
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
+  --color-primary: #475569;
+  --color-primary-light: #94a3b8;
+  --color-primary-dark: #334155;
+  --color-secondary: #0891b2;
+  --color-background: #f4f6f7;
+  --color-surface: #edf0f2;
   --color-text-primary: #0f172a;
   --color-text-secondary: #64748b;
   --color-text-on-primary: #ffffff;
@@ -499,9 +429,186 @@
   --color-error: #dc2626;
   --color-border: #e2e8f0;
 
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.09), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --radius-sm: 0.3125rem;  /* 5px — functional clean */
+  --radius-md: 0.4375rem;  /* 7px */
+  --radius-lg: 0.625rem;   /* 10px */
+  --radius-xl: 0.875rem;   /* 14px */
+  --radius-2xl: 1.125rem;  /* 18px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(71, 85, 105, 0.06);
+  --shadow-md: 0 3px 6px -1px rgba(71, 85, 105, 0.08), 0 1px 3px rgba(71, 85, 105, 0.04);
+  --shadow-lg: 0 8px 16px -3px rgba(71, 85, 105, 0.1), 0 3px 6px rgba(71, 85, 105, 0.05);
+}
+
+/* ================================================================
+   DEMO 12: LEADIQ AI — Executive Leadership Coach
+   Authoritative refined: deep indigo + muted gold accent
+   ================================================================ */
+[data-demo="executive"] {
+  --font-family-heading: 'EB Garamond', Georgia, serif;
+  --font-family-body: 'Noto Sans', system-ui, sans-serif;
+
+  --color-primary: #3730a3;
+  --color-primary-light: #6366f1;
+  --color-primary-dark: #312e81;
+  --color-secondary: #b45309;
+  --color-background: #eef2ff;
+  --color-surface: #e0e7ff;
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #6366f1;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #c7d2fe;
+
+  --radius-sm: 0.1875rem;  /* 3px — stately refined */
+  --radius-md: 0.25rem;    /* 4px */
+  --radius-lg: 0.4375rem;  /* 7px */
+  --radius-xl: 0.5625rem;  /* 9px */
+  --radius-2xl: 0.8125rem; /* 13px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(55, 48, 163, 0.05);
+  --shadow-md: 0 4px 12px -3px rgba(55, 48, 163, 0.08), 0 1px 4px -1px rgba(55, 48, 163, 0.04);
+  --shadow-lg: 0 12px 28px -6px rgba(55, 48, 163, 0.1), 0 4px 10px -3px rgba(55, 48, 163, 0.05);
+}
+
+/* ================================================================
+   DEMO 13: WEALTHIQ AI — Financial Coach
+   Trust stability: rich gold-brown + dark accents, conservative banking
+   ================================================================ */
+[data-demo="finance"] {
+  --font-family-heading: 'Crimson Pro', Georgia, serif;
+  --font-family-body: 'Public Sans', system-ui, sans-serif;
+
+  --color-primary: #854d0e;
+  --color-primary-light: #ca8a04;
+  --color-primary-dark: #713f12;
+  --color-secondary: #1e3a5f;
+  --color-background: #fefdf8;
+  --color-surface: #fef9ee;
+  --color-text-primary: #422006;
+  --color-text-secondary: #78716c;
+  --color-text-on-primary: #ffffff;
+  --color-success: #15803d;
+  --color-warning: #ca8a04;
+  --color-error: #dc2626;
+  --color-border: #d4d4c8;
+
+  --radius-sm: 0.25rem;    /* 4px — conservative banking */
+  --radius-md: 0.375rem;   /* 6px */
+  --radius-lg: 0.5rem;     /* 8px */
+  --radius-xl: 0.625rem;   /* 10px */
+  --radius-2xl: 0.875rem;  /* 14px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(133, 77, 14, 0.05);
+  --shadow-md: 0 2px 6px -1px rgba(133, 77, 14, 0.07), 0 1px 2px rgba(133, 77, 14, 0.04);
+  --shadow-lg: 0 6px 18px -4px rgba(133, 77, 14, 0.09), 0 2px 4px rgba(133, 77, 14, 0.04);
+}
+
+/* ================================================================
+   DEMO 14: VIRALMIND AI — Content & Reel Coach
+   Vibrant expressive: hot pink/rose + gradient energy, playful
+   ================================================================ */
+[data-demo="influencer"] {
+  --font-family-heading: 'Manrope', system-ui, sans-serif;
+  --font-family-body: 'Epilogue', system-ui, sans-serif;
+
+  --color-primary: #db2777;
+  --color-primary-light: #f472b6;
+  --color-primary-dark: #be185d;
+  --color-secondary: #8b5cf6;
+  --color-background: #fff1f2;
+  --color-surface: #fce7f3;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #78716c;
+  --color-text-on-primary: #ffffff;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #e11d48;
+  --color-border: #fbcfe8;
+
+  --radius-sm: 0.875rem;   /* 14px — pill-ish playful */
+  --radius-md: 1.125rem;   /* 18px */
+  --radius-lg: 1.5rem;     /* 24px */
+  --radius-xl: 2rem;       /* 32px */
+  --radius-2xl: 2.5rem;    /* 40px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 2px 4px rgba(219, 39, 119, 0.08);
+  --shadow-md: 0 4px 12px -2px rgba(219, 39, 119, 0.12), 0 2px 4px rgba(219, 39, 119, 0.06);
+  --shadow-lg: 0 8px 24px -4px rgba(219, 39, 119, 0.15), 0 4px 8px rgba(219, 39, 119, 0.08);
+}
+
+/* ================================================================
+   DEMO 15: REFLECT AI — Guided Journaling Coach
+   Serene contemplative: sage/olive + warm parchment, editorial
+   ================================================================ */
+[data-demo="journal"] {
+  --font-family-heading: 'Spectral', Georgia, serif;
+  --font-family-body: 'Jost', system-ui, sans-serif;
+
+  --color-primary: #4d7c0f;
+  --color-primary-light: #84cc16;
+  --color-primary-dark: #365314;
+  --color-secondary: #a16207;
+  --color-background: #fefef5;
+  --color-surface: #f7fee7;
+  --color-text-primary: #1a2e05;
+  --color-text-secondary: #6b7b4c;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #d9f99d;
+
+  --radius-sm: 0.4375rem;  /* 7px — gentle organic */
+  --radius-md: 0.625rem;   /* 10px */
+  --radius-lg: 0.875rem;   /* 14px */
+  --radius-xl: 1.125rem;   /* 18px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 4px rgba(77, 124, 15, 0.04);
+  --shadow-md: 0 4px 14px -4px rgba(77, 124, 15, 0.07), 0 1px 4px rgba(77, 124, 15, 0.03);
+  --shadow-lg: 0 12px 32px -8px rgba(77, 124, 15, 0.09), 0 4px 8px rgba(77, 124, 15, 0.04);
+}
+
+/* ================================================================
+   DEMO 16: PULSE AI — Progress Report Generator
+   Editorial structured: deep plum + warm accents, authoritative data
+   ================================================================ */
+[data-demo="reporter"] {
+  --font-family-heading: 'Vollkorn', Georgia, serif;
+  --font-family-body: 'Cabin', system-ui, sans-serif;
+
+  --color-primary: #57534e;
+  --color-primary-light: #a8a29e;
+  --color-primary-dark: #44403c;
+  --color-secondary: #c2410c;
+  --color-background: #faf8f5;
+  --color-surface: #f5f0eb;
+  --color-text-primary: #292524;
+  --color-text-secondary: #78716c;
+  --color-text-on-primary: #ffffff;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-border: #d6d3d1;
+
+  --radius-sm: 0.1875rem;   /* 3px — editorial precise */
+  --radius-md: 0.3125rem;   /* 5px */
+  --radius-lg: 0.5rem;      /* 8px */
+  --radius-xl: 0.6875rem;   /* 11px */
+  --radius-2xl: 1rem;       /* 16px */
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 3px rgba(87, 83, 78, 0.06);
+  --shadow-md: 0 3px 8px -2px rgba(87, 83, 78, 0.09), 0 1px 3px rgba(87, 83, 78, 0.05);
+  --shadow-lg: 0 8px 20px -4px rgba(87, 83, 78, 0.12), 0 3px 6px rgba(87, 83, 78, 0.06);
 }
 
 
@@ -563,4 +670,14 @@ textarea {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* ========================================================
+   FONT FAMILY BRIDGE
+   Maps new token names to legacy variable names used in styles.css
+   ======================================================== */
+:root,
+[data-demo] {
+  --font-primary: var(--font-family-body);
+  --font-custom: var(--font-family-heading);
 }
