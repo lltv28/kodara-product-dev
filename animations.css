@@ -3,35 +3,7 @@
    Purely additive — loaded after styles.css, no overrides.
    ============================================================ */
 
-/* --- a) Shimmer overlay on thinking containers --- */
-@keyframes uni-shimmer-sweep {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.uni-shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.uni-shimmer::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    color-mix(in srgb, var(--color-primary) 8%, transparent) 40%,
-    color-mix(in srgb, var(--color-primary) 14%, transparent) 50%,
-    color-mix(in srgb, var(--color-primary) 8%, transparent) 60%,
-    transparent 100%
-  );
-  animation: uni-shimmer-sweep 2s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* --- b) Gradient progress bar --- */
+/* --- a) Gradient progress bar --- */
 @keyframes uni-progress-fill {
   0%   { width: 0%; }
   100% { width: 100%; }
@@ -186,7 +158,6 @@
 
 /* --- h) Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
-  .uni-shimmer::after,
   .uni-pulse-ring::before,
   .uni-fade-out,
   .uni-fade-in,

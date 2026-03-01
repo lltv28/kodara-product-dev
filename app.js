@@ -875,7 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="avatar avatar--chat">
         <div class="avatar-initials" style="background:${currentDemo.gradient}">${currentDemo.initials}</div>
       </div>
-      <div class="message-loading uni-shimmer">
+      <div class="message-loading">
         <span class="loading-text">${currentDemo.name.split(' ')[0]} is thinking</span>
         <div class="loading-dots">
           <span></span><span></span><span></span>
@@ -909,7 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Generic thinking state builder ---
   function buildGenericThinking(text) {
     return `
-    <div class="chat-response-card uni-shimmer">
+    <div class="chat-response-card">
       <div class="uni-generic-thinking">
         <div class="uni-generic-thinking__header">
           <div class="uni-generic-thinking__icon uni-pulse-ring">
