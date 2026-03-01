@@ -377,6 +377,13 @@
   --white: #141414;
   --black: #f5f5f5;
 
+  /* Neutral scale — dark variants */
+  --neutral-50: #1f1f1f;
+  --neutral-200: #333333;
+  --neutral-300: #404040;
+  --neutral-500: #a3a3a3;
+  --neutral-700: #d4d4d4;
+
   /* Invert alpha channels */
   --alpha-light-25: rgba(255, 255, 255, 0.04);
   --alpha-light-50: rgba(255, 255, 255, 0.06);
@@ -592,6 +599,13 @@
 .app-frame[data-demo="influencer"] {
   --white: #121215;
   --black: #f5f5f5;
+
+  /* Neutral scale — dark variants */
+  --neutral-50: #1e1e21;
+  --neutral-200: #303033;
+  --neutral-300: #3f3f42;
+  --neutral-500: #a1a1aa;
+  --neutral-700: #d4d4d8;
 
   /* Invert alpha channels */
   --alpha-light-25: rgba(255, 255, 255, 0.04);

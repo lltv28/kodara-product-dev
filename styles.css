@@ -17518,6 +17518,25 @@ body:has(.app-frame[data-demo="influencer"]) {
   background: rgba(255, 255, 255, 0.25);
 }
 
+/* Dark mode: send button (hardcoded #fff gradient → dark surface) */
+.app-frame[data-demo="salescoach"] .send-btn,
+.app-frame[data-demo="influencer"] .send-btn {
+  background-image:
+    linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.08) 100%),
+    linear-gradient(90deg, var(--neutral-50) 0%, var(--neutral-50) 100%);
+  color: rgba(255, 255, 255, 0.60);
+}
+.app-frame[data-demo="salescoach"] .send-btn-inset,
+.app-frame[data-demo="influencer"] .send-btn-inset {
+  box-shadow: inset 0px 0px 3px rgba(255,255,255,0.12);
+}
+
+/* Dark mode: demo dropdown avatar text stays white */
+.app-frame[data-demo="salescoach"] .demo-dropdown__item-avatar,
+.app-frame[data-demo="influencer"] .demo-dropdown__item-avatar {
+  color: #ffffff;
+}
+
 /* --- Tablet: max-width 1024px --- */
 @media (max-width: 1024px) {
   :root {
