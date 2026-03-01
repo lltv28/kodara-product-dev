@@ -9231,5 +9231,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Initial dashboard entrance animation ---
-  triggerDashboardEntrance();
+  // Delay slightly to ensure CSS is parsed and first paint has occurred
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      triggerDashboardEntrance();
+    });
+  });
 });

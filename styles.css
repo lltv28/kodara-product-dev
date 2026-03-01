@@ -17764,7 +17764,7 @@ html, body {
 @keyframes saas-fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -17775,7 +17775,7 @@ html, body {
 @keyframes saas-scale-in {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -17842,28 +17842,28 @@ html, body {
 /* --- Dashboard entrance animations --- */
 
 .dashboard-content.is-animated .hero-greeting {
-  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: saas-fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .dashboard-content.is-animated .chat-input-card {
-  animation: saas-scale-in 500ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+  animation: saas-scale-in 600ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
 }
 
 .dashboard-content.is-animated .suggestions {
-  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
+  animation: saas-fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) 300ms both;
 }
 
 .dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(1) {
-  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) 400ms both;
 }
 .dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(2) {
-  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 250ms both;
+  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) 500ms both;
 }
 .dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(3) {
-  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 300ms both;
+  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) 600ms both;
 }
 .dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(4) {
-  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 350ms both;
+  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) 700ms both;
 }
 
 /* Avatar glow subtle pulse on dashboard */
@@ -17896,8 +17896,8 @@ html, body {
   transition: background-color 150ms ease-out, border-color 150ms ease-out, transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease-out;
 }
 .suggestion-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 .suggestion-card:active {
   transform: translateY(0) scale(0.98);
