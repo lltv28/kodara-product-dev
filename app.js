@@ -894,16 +894,13 @@ document.addEventListener('DOMContentLoaded', () => {
       thinkingEl.remove();
       chatMessages.scrollTop = scrollPos;
       const resultEl = addAIComponentMessage(resultHtml, true);
-      const content = resultEl.querySelector('.message-ai-content');
-      if (content) {
-        content.classList.add('uni-fade-in', 'uni-stagger');
-      }
+      resultEl.classList.add('uni-fade-in');
       if (scrollFn === scrollToTop) {
         scrollToTop(resultEl);
       } else {
         scrollToBottom();
       }
-    }, 250));
+    }, 280));
   }
 
   // --- Generic thinking state builder ---
