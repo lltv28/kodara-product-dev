@@ -137,23 +137,4 @@
   font-weight: 500;
 }
 
-/* --- h) Reduced motion --- */
-@media (prefers-reduced-motion: reduce) {
-  .uni-pulse-ring::before,
-  .uni-fade-out,
-  .uni-fade-in,
-  .uni-stagger > * {
-    animation: none;
-  }
-
-  .uni-progress__fill {
-    animation: none;
-    width: 100%;
-  }
-
-  .uni-fade-in,
-  .uni-stagger > * {
-    opacity: 1;
-    transform: none;
-  }
-}
+/* prefers-reduced-motion — disabled for demo site. */

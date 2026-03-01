@@ -304,17 +304,6 @@
 
   </div>
 
-  <!-- Animation diagnostic — remove after testing -->
-  <div id="animDiag" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#ff0040;color:#fff;padding:16px 24px;border-radius:12px;font:bold 14px sans-serif;animation:diagBounce 1s ease-in-out infinite alternate;pointer-events:none;">
-    ANIMATIONS WORKING
-  </div>
-  <style>
-    @keyframes diagBounce { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-20px); opacity: 0.5; } }
-    @media (prefers-reduced-motion: reduce) {
-      #animDiag::after { content: ' — REDUCED MOTION IS ON'; }
-    }
-  </style>
-
   <script src="app.js"></script>
 </body>
 </html>
