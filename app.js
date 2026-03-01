@@ -545,12 +545,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const scanEl = addAIComponentMessage(buildCalAIScanningState(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          scanEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(scanEl, response.component);
         }, 2200));
       } else if (response.connecting) {
-        // FB Ads: connecting -> syncing -> results
+        // FB Ads: connecting -> syncing -> results (skip crossfade for fbads)
         const connectEl = addAIComponentMessage(buildFbAdsConnecting(), true);
         scrollToBottom();
         _track(setTimeout(() => {
@@ -568,256 +566,220 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchEl = addAIComponentMessage(buildCompetitorSearching(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          searchEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(searchEl, response.component);
         }, 2500));
       } else if (response.generating) {
         // Ad Creative: thinking -> results
         const thinkEl = addAIComponentMessage(buildAdGenThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 2500));
       } else if (response.creatingImages) {
         // Creative Preview: loading -> results
         const loadEl = addAIComponentMessage(buildCreativePreviewLoading(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          loadEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(loadEl, response.component);
         }, 3000));
       } else if (response.pmHubConnecting) {
         // PM Hub: connecting -> dashboard
         const pmConnectEl = addAIComponentMessage(buildPmHubConnecting(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          pmConnectEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(pmConnectEl, response.component);
         }, 3000));
       } else if (response.finConnecting) {
         // Financial: connecting -> dashboard
         const finConnectEl = addAIComponentMessage(buildFinConnecting(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          finConnectEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(finConnectEl, response.component);
         }, 3000));
       } else if (response.unifiedThinking) {
         // Unified Data: thinking -> result
         const unifiedThinkEl = addAIComponentMessage(buildUnifiedThinkingState(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          unifiedThinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(unifiedThinkEl, response.component);
         }, 3500));
       } else if (response.personalityLoading) {
         // Mindset: personality profile thinking -> results
         const thinkEl = addAIComponentMessage(buildPersonalityThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 3000));
       } else if (response.sessionLoading) {
         // Mindset: session history thinking -> results
         const thinkEl = addAIComponentMessage(buildSessionThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 3000));
       } else if (response.conversationLoading) {
         // Mindset: conversation guide thinking -> results
         const thinkEl = addAIComponentMessage(buildConversationThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 3500));
       } else if (response.burnoutLoading) {
         // Mindset: burnout recovery thinking -> results
         const thinkEl = addAIComponentMessage(buildBurnoutThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 3500));
       } else if (response.webinarLoading) {
         // Webinar Script: thinking -> result (longer delay for dramatic effect)
         const thinkEl = addAIComponentMessage(buildWebinarThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          const resultEl = addAIComponentMessage(response.component, true);
-          scrollToTop(resultEl);
+          crossfadeToResult(thinkEl, response.component, scrollToTop);
         }, 20000));
       } else if (response.funnelLoading) {
         // Funnel Builder: thinking -> result
         const thinkEl = addAIComponentMessage(buildFunnelThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          const resultEl = addAIComponentMessage(response.component, true);
-          scrollToTop(resultEl);
+          crossfadeToResult(thinkEl, response.component, scrollToTop);
         }, 20000));
       } else if (response.emailLoading) {
         // Email Sequence: thinking -> result
         const thinkEl = addAIComponentMessage(buildEmailThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          const resultEl = addAIComponentMessage(response.component, true);
-          scrollToTop(resultEl);
+          crossfadeToResult(thinkEl, response.component, scrollToTop);
         }, 3000));
       } else if (response.hookLoading) {
         // Hook Generator: thinking -> result
         const thinkEl = addAIComponentMessage(buildHookThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          const resultEl = addAIComponentMessage(response.component, true);
-          scrollToTop(resultEl);
+          crossfadeToResult(thinkEl, response.component, scrollToTop);
         }, 2500));
       } else if (response.videoDiagnostic) {
         // Video Diagnostic: analyzing -> video response (8 seconds)
         const diagEl = addAIComponentMessage(buildVideoDiagnosticThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          diagEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
-          // Auto-play the video after render
+          crossfadeToResult(diagEl, response.component);
+          // Auto-play the video after crossfade completes
           _track(setTimeout(() => {
             const vid = document.querySelector('.video-diagnostic__player');
             if (vid) vid.play().catch(() => {});
-          }, 300));
+          }, 550));
         }, 8000));
       } else if (response.trainerPhotoScanning) {
         // Trainer: photo scanning -> results
         const scanEl = addAIComponentMessage(buildTrainerPhotoScanning(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          scanEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(scanEl, response.component);
         }, 2500));
       } else if (response.trainerThinking) {
         // Trainer: generic thinking -> results
         const thinkEl = addAIComponentMessage(buildTrainerCheckinThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 2000));
       } else if (response.trainerCheckinLoading) {
         // Trainer: check-in loading -> results
         const thinkEl = addAIComponentMessage(buildTrainerCheckinThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 2500));
       } else if (response.fbadsDashboardLoading) {
         // FB Ads: connecting -> results
         const connectEl = addAIComponentMessage(buildFbAdsDashboardThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          connectEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(connectEl, response.component);
         }, 3000));
       } else if (response.bizDashboardLoading) {
         // Biz: connecting -> results
         const connectEl = addAIComponentMessage(buildBizDashboardThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          connectEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(connectEl, response.component);
         }, 3000));
       } else if (response.sageOnboardingLoading) {
         // Sage: onboarding loading -> results
         const thinkEl = addAIComponentMessage(buildMindsetOnboardingThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 3000));
       } else if (response.sageMemoryLoading) {
         // Sage: memory loading -> results
         const thinkEl = addAIComponentMessage(buildMindsetMemoryThinking(), true);
         scrollToBottom();
         _track(setTimeout(() => {
-          thinkEl.remove();
-          addAIComponentMessage(response.component);
-          scrollToBottom();
+          crossfadeToResult(thinkEl, response.component);
         }, 3000));
       } else if (response.callScorecardThinking) {
         const thinkEl = addAIComponentMessage(buildCallScorecardThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3000));
       } else if (response.cmaThinking) {
         const thinkEl = addAIComponentMessage(buildCmaThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3000));
       } else if (response.txcoordThinking) {
         const thinkEl = addAIComponentMessage(buildTransactionThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3000));
       } else if (response.feedbackThinking) {
         const thinkEl = addAIComponentMessage(buildFeedbackThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3000));
       } else if (response.devPlanThinking) {
         const thinkEl = addAIComponentMessage(buildDevPlanThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3000));
       } else if (response.budgetThinking) {
         const thinkEl = addAIComponentMessage(buildBudgetThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 2500));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 2500));
       } else if (response.healthScoreThinking) {
         const thinkEl = addAIComponentMessage(buildHealthScoreThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3000));
       } else if (response.reelScriptsThinking) {
         const thinkEl = addAIComponentMessage(buildReelScriptsThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 2500));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 2500));
       } else if (response.calendarThinking) {
         const thinkEl = addAIComponentMessage(buildCalendarThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 2500));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 2500));
       } else if (response.performanceThinking) {
         const thinkEl = addAIComponentMessage(buildPerformanceThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3000));
       } else if (response.journalHistoryThinking) {
         const thinkEl = addAIComponentMessage(buildJournalHistoryThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 2500));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 2500));
       } else if (response.patternThinking) {
         const thinkEl = addAIComponentMessage(buildPatternThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 3500));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 3500));
       } else if (response.reportThinking) {
         const thinkEl = addAIComponentMessage(buildReportThinking(), true);
         scrollToBottom();
-        _track(setTimeout(() => { thinkEl.remove(); addAIComponentMessage(response.component); scrollToBottom(); }, 4000));
+        _track(setTimeout(() => { crossfadeToResult(thinkEl, response.component); }, 4000));
+      } else if (response.genericThinking) {
+        // Generic thinking state for responses that previously had no thinking animation
+        const thinkEl = addAIComponentMessage(
+          buildGenericThinking(response.genericThinkingText), true);
+        scrollToBottom();
+        _track(setTimeout(() => {
+          crossfadeToResult(thinkEl, response.component);
+        }, 2000));
       } else if (response.component) {
         addAIComponentMessage(response.component);
       } else {
@@ -913,7 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="avatar avatar--chat">
         <div class="avatar-initials" style="background:${currentDemo.gradient}">${currentDemo.initials}</div>
       </div>
-      <div class="message-loading">
+      <div class="message-loading uni-shimmer">
         <span class="loading-text">${currentDemo.name.split(' ')[0]} is thinking</span>
         <div class="loading-dots">
           <span></span><span></span><span></span>
@@ -922,6 +884,46 @@ document.addEventListener('DOMContentLoaded', () => {
     chatMessages.appendChild(el);
     scrollToBottom();
     return el;
+  }
+
+  // --- Crossfade transition utility ---
+  function crossfadeToResult(thinkingEl, resultHtml, scrollFn) {
+    thinkingEl.classList.add('uni-fade-out');
+    _track(setTimeout(() => {
+      const scrollPos = chatMessages.scrollTop;
+      thinkingEl.remove();
+      chatMessages.scrollTop = scrollPos;
+      const resultEl = addAIComponentMessage(resultHtml, true);
+      const content = resultEl.querySelector('.message-ai-content');
+      if (content) {
+        content.classList.add('uni-fade-in', 'uni-stagger');
+      }
+      if (scrollFn === scrollToTop) {
+        scrollToTop(resultEl);
+      } else {
+        scrollToBottom();
+      }
+    }, 250));
+  }
+
+  // --- Generic thinking state builder ---
+  function buildGenericThinking(text) {
+    return `
+    <div class="chat-response-card uni-shimmer">
+      <div class="uni-generic-thinking">
+        <div class="uni-generic-thinking__header">
+          <div class="uni-generic-thinking__icon uni-pulse-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3L12 14l-4.8 2.6.9-5.3L4.3 7.6l5.3-.8L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="uni-generic-thinking__text">${text}</span>
+        </div>
+        <div class="uni-progress">
+          <div class="uni-progress__fill"></div>
+        </div>
+      </div>
+    </div>`;
   }
 
   function scrollToBottom() {
@@ -1671,7 +1673,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="ad-gen__thinking">
-        <div class="ad-gen__thinking-icon">
+        <div class="ad-gen__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3L12 14l-4.8 2.6.9-5.3L4.3 7.6l5.3-.8L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -1902,7 +1904,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="video-diagnostic__thinking">
-        <div class="video-diagnostic__thinking-icon">
+        <div class="video-diagnostic__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -2442,7 +2444,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M9 21h6M10 17h4" stroke-linecap="round"/>
@@ -2575,7 +2577,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke-linecap="round"/>
           </svg>
@@ -2705,7 +2707,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -2824,7 +2826,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -3000,7 +3002,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mike__thinking mike__thinking--long">
-        <div class="mike__thinking-icon">
+        <div class="mike__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3189,7 +3191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mike__thinking mike__thinking--long">
-        <div class="mike__thinking-icon">
+        <div class="mike__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -3362,7 +3364,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mike__thinking">
-        <div class="mike__thinking-icon">
+        <div class="mike__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3564,7 +3566,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mike__thinking">
-        <div class="mike__thinking-icon">
+        <div class="mike__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -4022,7 +4024,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -4046,7 +4048,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"/>
           </svg>
@@ -4945,7 +4947,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M9 21h6M10 17h4" stroke-linecap="round"/>
@@ -4970,7 +4972,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon">
+        <div class="mindset__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M9 21h6M10 17h4" stroke-linecap="round"/>
@@ -4998,7 +5000,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon" style="background:rgba(220,38,38,0.08)">
+        <div class="mindset__thinking-icon uni-pulse-ring" style="background:rgba(220,38,38,0.08)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:#dc2626">
             <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -5312,7 +5314,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="mindset__thinking">
-        <div class="mindset__thinking-icon" style="background:rgba(8,145,178,0.08)">
+        <div class="mindset__thinking-icon uni-pulse-ring" style="background:rgba(8,145,178,0.08)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:#0891b2">
             <path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 0V4h4v3m0 0v1a3 3 0 006 0V7m0 0V4M9 21V10m6 11V10" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -5642,7 +5644,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="chat-response-card">
         <div class="txcoord__thinking">
-          <div class="txcoord__thinking-icon">
+          <div class="txcoord__thinking-icon uni-pulse-ring">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke-linecap="round"/>
               <path d="M9 14l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -5952,7 +5954,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="chat-response-card">
         <div class="exec__thinking">
-          <div class="exec__thinking-icon">
+          <div class="exec__thinking-icon uni-pulse-ring">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -6213,7 +6215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="chat-response-card">
         <div class="exec__thinking">
-          <div class="exec__thinking-icon">
+          <div class="exec__thinking-icon uni-pulse-ring">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -6353,7 +6355,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="chat-response-card">
         <div class="wealth__thinking">
-          <div class="wealth__thinking-icon">
+          <div class="wealth__thinking-icon uni-pulse-ring">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M12 1v22M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -6614,7 +6616,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="chat-response-card">
         <div class="wealth__thinking">
-          <div class="wealth__thinking-icon">
+          <div class="wealth__thinking-icon uni-pulse-ring">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -6746,7 +6748,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="vm__thinking">
-        <div class="vm__thinking-icon">
+        <div class="vm__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -6970,7 +6972,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="vm__thinking">
-        <div class="vm__thinking-icon">
+        <div class="vm__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -7047,7 +7049,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="vm__thinking">
-        <div class="vm__thinking-icon">
+        <div class="vm__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -7195,7 +7197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="reflect__thinking">
-        <div class="reflect__thinking-icon">
+        <div class="reflect__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -7278,7 +7280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="reflect__thinking">
-        <div class="reflect__thinking-icon">
+        <div class="reflect__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -7475,7 +7477,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="chat-response-card">
       <div class="pulse__thinking pulse__thinking--long">
-        <div class="pulse__thinking-icon">
+        <div class="pulse__thinking-icon uni-pulse-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -8804,14 +8806,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sales: Call History
     if (currentDemo.id === 'salescoach' && (lower.includes('history') || lower.includes('performance history') ||
         lower.includes('call scores') || lower.includes('my calls') || lower.includes('trends'))) {
-      return { component: buildCallHistory() };
+      return { component: buildCallHistory(), genericThinking: true, genericThinkingText: 'Loading call history...' };
     }
 
     // Sales: Playbook
     if (currentDemo.id === 'salescoach' && (lower.includes('playbook') || lower.includes('framework') ||
         lower.includes('discovery call') || lower.includes('sales techniques') || lower.includes('objection handling') ||
         lower.includes('objection') || lower.includes('price concern'))) {
-      return { component: buildSalesPlaybook() };
+      return { component: buildSalesPlaybook(), genericThinking: true, genericThinkingText: 'Loading playbook...' };
     }
 
     // --- Real Estate CMA component triggers (PropVal) ---
@@ -8825,13 +8827,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // CMA: Comparables
     if (currentDemo.id === 'realestate' && (lower.includes('comparable') || lower.includes('comps') ||
         lower.includes('similar properties') || lower.includes('recent sales'))) {
-      return { component: buildComparables() };
+      return { component: buildComparables(), genericThinking: true, genericThinkingText: 'Finding comparables...' };
     }
 
     // CMA: Market Trends
     if (currentDemo.id === 'realestate' && (lower.includes('market trend') || lower.includes('market data') ||
         lower.includes('pricing data') || lower.includes('market overview'))) {
-      return { component: buildMarketTrends() };
+      return { component: buildMarketTrends(), genericThinking: true, genericThinkingText: 'Pulling market data...' };
     }
 
     // --- Transaction Coordinator component triggers (DealFlow) ---
@@ -8845,14 +8847,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // TX: Checklist
     if (currentDemo.id === 'txcoord' && (lower.includes('checklist') || lower.includes('johnson') ||
         lower.includes('deal checklist') || lower.includes('transaction checklist'))) {
-      return { component: buildDealChecklist() };
+      return { component: buildDealChecklist(), genericThinking: true, genericThinkingText: 'Loading checklist...' };
     }
 
     // TX: Deadline Alerts
     if (currentDemo.id === 'txcoord' && (lower.includes('deadline') || lower.includes('what\'s due') ||
         lower.includes('upcoming') || lower.includes('milestones this week') || lower.includes('attention today') ||
         lower.includes('what needs'))) {
-      return { component: buildDeadlineAlerts() };
+      return { component: buildDeadlineAlerts(), genericThinking: true, genericThinkingText: 'Checking deadlines...' };
     }
 
     // --- Executive Coach component triggers (LeadIQ) ---
@@ -8873,7 +8875,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Executive: Survey Builder
     if (currentDemo.id === 'executive' && (lower.includes('survey') || lower.includes('create feedback') ||
         lower.includes('build survey') || lower.includes('feedback survey'))) {
-      return { component: buildSurveyBuilder() };
+      return { component: buildSurveyBuilder(), genericThinking: true, genericThinkingText: 'Setting up builder...' };
     }
 
     // --- Financial Coach component triggers (WealthIQ) ---
@@ -8887,13 +8889,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Finance: Transaction Feed
     if (currentDemo.id === 'finance' && (lower.includes('transaction') || lower.includes('recent transactions') ||
         lower.includes('bank statement') || lower.includes('spending insights'))) {
-      return { component: buildTransactionFeed() };
+      return { component: buildTransactionFeed(), genericThinking: true, genericThinkingText: 'Fetching transactions...' };
     }
 
     // Finance: Savings Goals
     if (currentDemo.id === 'finance' && (lower.includes('savings goal') || lower.includes('savings tracker') ||
         lower.includes('emergency fund') || lower.includes('how are my savings'))) {
-      return { component: buildSavingsGoals() };
+      return { component: buildSavingsGoals(), genericThinking: true, genericThinkingText: 'Loading savings goals...' };
     }
 
     // Finance: Health Score
@@ -8913,7 +8915,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Influencer: Trending
     if (currentDemo.id === 'influencer' && (lower.includes('trending') || lower.includes('formats') ||
         lower.includes('audio suggestion') || lower.includes('what formats'))) {
-      return { component: buildTrendingSuggestions() };
+      return { component: buildTrendingSuggestions(), genericThinking: true, genericThinkingText: 'Scanning trends...' };
     }
 
     // Influencer: Content Calendar
@@ -8933,7 +8935,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Journal: Prompt
     if (currentDemo.id === 'journal' && (lower.includes('prompt') || lower.includes('journal') && lower.includes('today') ||
         lower.includes('start writing') || lower.includes('adaptive'))) {
-      return { component: buildJournalPrompt() };
+      return { component: buildJournalPrompt(), genericThinking: true, genericThinkingText: 'Preparing today\'s prompt...' };
     }
 
     // Journal: History
@@ -8951,7 +8953,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Journal: Streak
     if (currentDemo.id === 'journal' && (lower.includes('streak') || lower.includes('consistency') ||
         lower.includes('how often') || lower.includes('journaling streak'))) {
-      return { component: buildJournalStreak() };
+      return { component: buildJournalStreak(), genericThinking: true, genericThinkingText: 'Calculating streak...' };
     }
 
     // --- Progress Report component triggers (Pulse) ---
@@ -8965,19 +8967,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reporter: Activity Aggregator
     if (currentDemo.id === 'reporter' && (lower.includes('activity') || lower.includes('client activity') ||
         lower.includes('data sources') || lower.includes('activity summary'))) {
-      return { component: buildActivityAggregator() };
+      return { component: buildActivityAggregator(), genericThinking: true, genericThinkingText: 'Aggregating activity...' };
     }
 
     // Reporter: Template
     if (currentDemo.id === 'reporter' && (lower.includes('template') || lower.includes('customize') ||
         lower.includes('report settings') || lower.includes('configure'))) {
-      return { component: buildReportTemplate() };
+      return { component: buildReportTemplate(), genericThinking: true, genericThinkingText: 'Loading template...' };
     }
 
     // Reporter: Scheduler
     if (currentDemo.id === 'reporter' && (lower.includes('schedule') || lower.includes('auto-report') ||
         lower.includes('automated') || lower.includes('weekly report'))) {
-      return { component: buildReportScheduler() };
+      return { component: buildReportScheduler(), genericThinking: true, genericThinkingText: 'Loading scheduler...' };
     }
 
     // --- Copywriting AI component triggers (Mike) ---
@@ -9072,7 +9074,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lower.includes('what did i miss') || lower.includes('alerts') || lower.includes('watchdog') ||
         lower.includes('falling through') || lower.includes('catch up') || lower.includes('daily briefing') ||
         lower.includes('attention today')) {
-      return { component: buildWatchdogAlert() };
+      return { component: buildWatchdogAlert(), genericThinking: true, genericThinkingText: 'Scanning for alerts...' };
     }
 
     // --- Marketing component triggers ---
@@ -9122,20 +9124,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lower.includes('streak') || lower.includes('consistency') || lower.includes('calendar') ||
         lower.includes('how many days') || lower.includes('workout history') || lower.includes('habit') ||
         lower.includes('show my workouts')) {
-      return { component: buildHabitTracker() };
+      return { component: buildHabitTracker(), genericThinking: true, genericThinkingText: 'Loading activity data...' };
     }
 
     // Form analyzer triggers
     if (lower.includes('form check') || lower.includes('analyze my form') || lower.includes('check my squat') ||
         lower.includes('form analysis') || lower.includes('correct my form') || lower.includes('review my form')) {
-      return { component: buildFormAnalyzer(), userImage: IMG.squat };
+      return { component: buildFormAnalyzer(), userImage: IMG.squat, genericThinking: true, genericThinkingText: 'Analyzing form data...' };
     }
 
     // Nutrition tracker triggers
     if (lower.includes('macros') || lower.includes('calories today') || lower.includes('nutrition dashboard') ||
         lower.includes('daily nutrition') || lower.includes('calorie') || lower.includes('how am i doing nutrition') ||
         lower.includes('show my macros') || lower.includes('calculate my macros')) {
-      return { component: buildNutritionTracker() };
+      return { component: buildNutritionTracker(), genericThinking: true, genericThinkingText: 'Loading nutrition data...' };
     }
 
     // Existing text responses

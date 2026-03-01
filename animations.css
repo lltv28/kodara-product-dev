@@ -1,0 +1,212 @@
+/* ============================================================
+   Uniform Loading & Progress Animations
+   Purely additive — loaded after styles.css, no overrides.
+   ============================================================ */
+
+/* --- a) Shimmer overlay on thinking containers --- */
+@keyframes uni-shimmer-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.uni-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.uni-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--color-primary) 8%, transparent) 40%,
+    color-mix(in srgb, var(--color-primary) 14%, transparent) 50%,
+    color-mix(in srgb, var(--color-primary) 8%, transparent) 60%,
+    transparent 100%
+  );
+  animation: uni-shimmer-sweep 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- b) Gradient progress bar --- */
+@keyframes uni-progress-fill {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes uni-progress-glow {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+.uni-progress {
+  width: 100%;
+  height: 4px;
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.uni-progress__fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-light, var(--color-primary))
+  );
+  animation:
+    uni-progress-fill 2s ease-out forwards,
+    uni-progress-glow 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.uni-progress--medium .uni-progress__fill {
+  animation-duration: 3s, 1.5s;
+}
+
+.uni-progress--long .uni-progress__fill {
+  animation-duration: 5s, 1.5s;
+}
+
+/* --- c) Icon pulse ring --- */
+@keyframes uni-pulse-expand {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.uni-pulse-ring {
+  position: relative;
+}
+
+.uni-pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid var(--color-primary);
+  animation: uni-pulse-expand 1.8s ease-out infinite;
+  pointer-events: none;
+}
+
+/* --- d) Crossfade transitions --- */
+@keyframes uni-fade-out-kf {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes uni-fade-in-kf {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.uni-fade-out {
+  animation: uni-fade-out-kf 250ms ease-in forwards;
+  pointer-events: none;
+}
+
+.uni-fade-in {
+  animation: uni-fade-in-kf 400ms ease-out forwards;
+}
+
+/* --- e) Result section stagger --- */
+.uni-stagger > * {
+  opacity: 0;
+  animation: uni-fade-in-kf 400ms ease-out forwards;
+}
+
+.uni-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.uni-stagger > *:nth-child(2) { animation-delay: 80ms; }
+.uni-stagger > *:nth-child(3) { animation-delay: 160ms; }
+.uni-stagger > *:nth-child(4) { animation-delay: 240ms; }
+.uni-stagger > *:nth-child(5) { animation-delay: 320ms; }
+.uni-stagger > *:nth-child(6) { animation-delay: 400ms; }
+.uni-stagger > *:nth-child(7) { animation-delay: 480ms; }
+.uni-stagger > *:nth-child(8) { animation-delay: 560ms; }
+
+/* --- f) Enhanced loading dots (brand-colored bounce) --- */
+@keyframes uni-dot-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40%           { transform: translateY(-6px); opacity: 1; }
+}
+
+.message-loading .loading-dots span {
+  background: var(--color-primary);
+  animation: uni-dot-bounce 1.2s ease-in-out infinite;
+}
+
+.message-loading .loading-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.message-loading .loading-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* --- g) Generic thinking state --- */
+.uni-generic-thinking {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.uni-generic-thinking__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uni-generic-thinking__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.uni-generic-thinking__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.uni-generic-thinking__text {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #64748b);
+  font-weight: 500;
+}
+
+/* --- h) Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .uni-shimmer::after,
+  .uni-pulse-ring::before,
+  .uni-fade-out,
+  .uni-fade-in,
+  .uni-stagger > * {
+    animation: none;
+  }
+
+  .uni-progress__fill {
+    animation: none;
+    width: 100%;
+  }
+
+  .message-loading .loading-dots span {
+    animation: none;
+    opacity: 0.7;
+  }
+
+  .uni-fade-in,
+  .uni-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}
