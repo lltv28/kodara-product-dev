@@ -477,15 +477,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (view === 'dashboard') {
       viewDashboard.classList.remove('hidden');
       viewChat.classList.add('hidden');
+      // Trigger dashboard entrance animation
+      viewDashboard.classList.add('is-view-enter');
+      triggerDashboardEntrance();
     } else {
       viewDashboard.classList.add('hidden');
       viewChat.classList.remove('hidden');
+      viewChat.classList.add('is-view-enter');
       // Start chat view from the top
       chatMessages.scrollTop = 0;
     }
     sidebarItems.forEach(item => {
       item.classList.toggle('sidebar-item--active', item.dataset.view === view);
     });
+  }
+
+  // Trigger staggered dashboard entrance animation
+  function triggerDashboardEntrance() {
+    const content = document.querySelector('.dashboard-content');
+    if (!content) return;
+    // Remove and re-add to re-trigger animations
+    content.classList.remove('is-animated');
+    // Force reflow
+    void content.offsetWidth;
+    content.classList.add('is-animated');
   }
 
   sidebarItems.forEach(item => {
@@ -808,7 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Chat message builders ---
   function addUserMessage(text) {
     const el = document.createElement('div');
-    el.className = 'message-user';
+    el.className = 'message-user is-animated';
     el.innerHTML = `<div class="message-user-bubble">${escapeHtml(text)}</div>`;
     chatMessages.appendChild(el);
     scrollToBottom();
@@ -816,7 +831,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addUserMessageWithImage(text, imgSrc) {
     const el = document.createElement('div');
-    el.className = 'message-user';
+    el.className = 'message-user is-animated';
     el.innerHTML = `
       <div class="message-user--with-image">
         <div class="message-user-image"><img src="${imgSrc}" alt="Attached photo"/></div>
@@ -828,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addAIMessage(html, chips = []) {
     const el = document.createElement('div');
-    el.className = 'message-ai';
+    el.className = 'message-ai is-animated';
 
     let chipsHtml = '';
     if (chips.length) {
@@ -855,7 +870,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addAIComponentMessage(componentHtml, returnEl) {
     const el = document.createElement('div');
-    el.className = 'message-ai';
+    el.className = 'message-ai is-animated';
     el.innerHTML = `
       <div class="avatar avatar--chat">
         <div class="avatar-initials" style="background:${currentDemo.gradient}">${currentDemo.initials}</div>
@@ -864,18 +879,20 @@ document.addEventListener('DOMContentLoaded', () => {
         ${componentHtml}
       </div>`;
     chatMessages.appendChild(el);
+    // Add animation class to response cards for staggered entrance
+    el.querySelectorAll('.chat-response-card').forEach(c => c.classList.add('is-animated'));
     initComponentInteractions(el);
     if (returnEl) return el;
   }
 
   function addLoadingMessage() {
     const el = document.createElement('div');
-    el.className = 'message-ai';
+    el.className = 'message-ai is-animated';
     el.innerHTML = `
       <div class="avatar avatar--chat">
         <div class="avatar-initials" style="background:${currentDemo.gradient}">${currentDemo.initials}</div>
       </div>
-      <div class="message-loading">
+      <div class="message-loading is-animated">
         <span class="loading-text">${currentDemo.name.split(' ')[0]} is thinking</span>
         <div class="loading-dots">
           <span></span><span></span><span></span>
@@ -895,6 +912,9 @@ document.addEventListener('DOMContentLoaded', () => {
       chatMessages.scrollTop = scrollPos;
       const resultEl = addAIComponentMessage(resultHtml, true);
       resultEl.classList.add('uni-fade-in');
+      // Add animation class to the response card for staggered entrance
+      const card = resultEl.querySelector('.chat-response-card');
+      if (card) card.classList.add('is-animated');
       if (scrollFn === scrollToTop) {
         scrollToTop(resultEl);
       } else {
@@ -9209,4 +9229,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function escapeAttr(str) {
     return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
+
+  // --- Initial dashboard entrance animation ---
+  triggerDashboardEntrance();
 });

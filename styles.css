@@ -17753,3 +17753,352 @@ html, body {
     padding: 0 12px;
   }
 }
+
+/* ============================================================
+   SaaS Animation System
+   Entrance, micro-interaction, and data animations
+   ============================================================ */
+
+/* --- Keyframes --- */
+
+@keyframes saas-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes saas-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes saas-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes saas-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes saas-avatar-glow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes saas-view-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes saas-number-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(4px);
+  }
+  60% {
+    transform: scale(1.04) translateY(-1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* --- Dashboard entrance animations --- */
+
+.dashboard-content.is-animated .hero-greeting {
+  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.dashboard-content.is-animated .chat-input-card {
+  animation: saas-scale-in 500ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.dashboard-content.is-animated .suggestions {
+  animation: saas-fade-in-up 500ms cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
+}
+
+.dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(1) {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+.dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(2) {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 250ms both;
+}
+.dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(3) {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 300ms both;
+}
+.dashboard-content.is-animated .suggestions-grid .suggestion-card:nth-child(4) {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 350ms both;
+}
+
+/* Avatar glow subtle pulse on dashboard */
+.dashboard-content.is-animated .avatar-glow {
+  animation: saas-avatar-glow-pulse 3s ease-in-out infinite;
+}
+
+/* --- Micro-interactions: Buttons --- */
+
+.send-btn {
+  transition: opacity 150ms ease-out, transform 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.send-btn:hover {
+  transform: scale(1.02);
+}
+.send-btn:active {
+  transform: scale(0.96);
+}
+
+.icon-btn {
+  transition: background-color 150ms ease-out, transform 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.icon-btn:active {
+  transform: scale(0.94);
+}
+
+/* --- Micro-interactions: Suggestion cards --- */
+
+.suggestion-card {
+  transition: background-color 150ms ease-out, border-color 150ms ease-out, transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease-out;
+}
+.suggestion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.suggestion-card:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+}
+
+/* --- Micro-interactions: Action chips --- */
+
+.action-chip {
+  transition: background-color 150ms ease-out, transform 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.action-chip:active {
+  transform: scale(0.97);
+}
+
+/* --- Micro-interactions: Agent chip --- */
+
+.agent-chip {
+  transition: background-color 150ms ease-out, transform 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.agent-chip:active {
+  transform: scale(0.97);
+}
+
+/* --- Chat input focus glow --- */
+
+.chat-input-card:focus-within {
+  box-shadow: var(--shadow-card), 0 0 0 3px color-mix(in srgb, var(--color-primary, #106844) 10%, transparent);
+}
+
+/* --- Chat message entrance animations --- */
+
+.message-user.is-animated {
+  animation: saas-slide-in-right 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.message-ai.is-animated {
+  animation: saas-slide-in-left 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.message-loading.is-animated {
+  animation: saas-fade-in-up 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --- Rich component staggered entrance --- */
+
+.chat-response-card.is-animated {
+  animation: saas-scale-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.chat-response-card.is-animated .chat-response-card__header {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both;
+}
+
+.chat-response-card.is-animated .chat-response-card__body {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+.chat-response-card.is-animated .chat-response-card__footer {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) 300ms both;
+}
+
+/* --- View transitions --- */
+
+.view--dashboard.is-view-enter {
+  animation: saas-view-fade-in 300ms ease-out both;
+}
+
+.view--chat.is-view-enter {
+  animation: saas-view-fade-in 300ms ease-out both;
+}
+
+/* --- Settings modal improvements --- */
+
+.settings-dialog {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.settings-section {
+  animation: saas-fade-in-up 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.settings-section:nth-child(2) {
+  animation-delay: 60ms;
+}
+.settings-section:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+/* --- Demo switcher dropdown enhancement --- */
+
+.demo-dropdown__item {
+  transition: background-color 100ms ease-out, transform 100ms ease-out;
+}
+.demo-dropdown__item:active {
+  transform: scale(0.98);
+}
+
+/* --- Sidebar item enhancement --- */
+
+.sidebar-item {
+  transition: background-color 100ms ease-out, transform 100ms ease-out;
+}
+.sidebar-item:active {
+  transform: scale(0.98);
+}
+
+/* --- Number/stat pop animation class --- */
+
+.stat-animate {
+  animation: saas-number-pop 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.stat-animate:nth-child(2) { animation-delay: 50ms; }
+.stat-animate:nth-child(3) { animation-delay: 100ms; }
+.stat-animate:nth-child(4) { animation-delay: 150ms; }
+
+/* --- Close button --- */
+
+.close-btn {
+  transition: background-color 150ms ease-out, transform 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.close-btn:active {
+  transform: scale(0.92);
+}
+
+/* --- Settings edit button --- */
+
+.settings-edit-btn {
+  transition: opacity 150ms, transform 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.settings-edit-btn:active {
+  transform: scale(0.95);
+}
+
+/* ============================================================
+   prefers-reduced-motion: Disable or simplify ALL animations
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Kill all custom entrance animations */
+  .dashboard-content.is-animated .hero-greeting,
+  .dashboard-content.is-animated .chat-input-card,
+  .dashboard-content.is-animated .suggestions,
+  .dashboard-content.is-animated .suggestions-grid .suggestion-card,
+  .message-user.is-animated,
+  .message-ai.is-animated,
+  .message-loading.is-animated,
+  .chat-response-card.is-animated,
+  .chat-response-card.is-animated .chat-response-card__header,
+  .chat-response-card.is-animated .chat-response-card__body,
+  .chat-response-card.is-animated .chat-response-card__footer,
+  .view--dashboard.is-view-enter,
+  .view--chat.is-view-enter,
+  .settings-section,
+  .stat-animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Kill avatar glow pulse */
+  .dashboard-content.is-animated .avatar-glow {
+    animation: none !important;
+  }
+
+  /* Remove hover transforms, keep color transitions */
+  .send-btn:hover,
+  .send-btn:active,
+  .icon-btn:active,
+  .suggestion-card:hover,
+  .suggestion-card:active,
+  .action-chip:active,
+  .agent-chip:active,
+  .demo-dropdown__item:active,
+  .sidebar-item:active,
+  .close-btn:active,
+  .settings-edit-btn:active {
+    transform: none !important;
+  }
+
+  /* Simplify all transitions to instant */
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  /* Kill existing infinite animations */
+  .loading-dots span,
+  .uni-pulse-ring::before,
+  .avatar-glow {
+    animation: none !important;
+  }
+
+  /* Show progress bars at 100% immediately */
+  .uni-progress__fill,
+  .cal-ai__scan-bar-fill,
+  .fb-ads__sync-bar-fill,
+  .mindset__progress-fill {
+    animation: none !important;
+    width: 100% !important;
+  }
+}
