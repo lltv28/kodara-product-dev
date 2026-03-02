@@ -288,6 +288,12 @@ html, body {
   text-overflow: ellipsis;
 }
 
+.demo-dropdown__star {
+  color: #f5a623;
+  font-size: 13px;
+  margin-left: 2px;
+}
+
 .demo-dropdown__item-role {
   font-size: 12px;
   font-weight: 500;

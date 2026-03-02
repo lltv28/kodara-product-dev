@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initials: 'CF',
       role: 'Personal Trainer',
       gradient: 'linear-gradient(135deg, #059669, #10b981)',
+      starred: true,
       greeting: 'Ready to crush your fitness goals today?',
       placeholder: 'Ask about meal plans, workouts, macros, accountability...',
       agentName: 'Coach Flex AI',
@@ -162,15 +163,16 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 'fbads',
-      name: 'Adeline AI',
-      initials: 'AA',
+      name: 'Lucas AI v2',
+      initials: 'LA',
       role: 'Facebook Ads Manager',
       gradient: 'linear-gradient(135deg, #1877f2, #0d47a1)',
+      starred: true,
       greeting: 'Let\'s optimize your ad campaigns today.',
       placeholder: 'Ask about campaigns, ROAS, A/B tests, ad variations...',
-      agentName: 'Adeline AI',
+      agentName: 'Lucas AI v2',
       agentCount: '+3',
-      suggestionsLabel: 'Common questions for Adeline',
+      suggestionsLabel: 'Common questions for Lucas AI',
       suggestions: [
         { text: 'Show my active campaign performance dashboard', prompt: 'Show my Facebook ad campaign performance dashboard', highlighted: true },
         { text: 'Which ads should I pause right now?', prompt: 'Identify underperforming ads and recommend which to pause' },
@@ -202,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initials: 'SA',
       role: 'Mindset & Relationship Coach',
       gradient: 'linear-gradient(135deg, #7c3aed, #a78bfa)',
+      starred: true,
       greeting: 'Welcome back. How are you feeling today?',
       placeholder: 'Talk about goals, frustrations, relationships, mindset shifts...',
       agentName: 'Sage AI',
@@ -220,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initials: 'CA',
       role: 'Sales Call Coach',
       gradient: 'linear-gradient(135deg, #dc2626, #f97316)',
+      starred: true,
       greeting: 'Ready to sharpen your sales game?',
       placeholder: 'Upload a call transcript, ask about sales techniques...',
       agentName: 'Closer AI',
@@ -238,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initials: 'PV',
       role: 'Real Estate CMA Expert',
       gradient: 'linear-gradient(135deg, #0891b2, #06b6d4)',
+      starred: true,
       greeting: "Let's build a market analysis that wins the listing.",
       placeholder: 'Enter a property address, ask about market trends...',
       agentName: 'PropVal AI',
@@ -292,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initials: 'WQ',
       role: 'Financial Coach',
       gradient: 'linear-gradient(135deg, #059669, #34d399)',
+      starred: true,
       greeting: "Let's take control of your finances.",
       placeholder: 'Ask about budget, spending, savings goals...',
       agentName: 'WealthIQ AI',
@@ -310,6 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initials: 'VM',
       role: 'Content & Reel Coach',
       gradient: 'linear-gradient(135deg, #e11d48, #fb7185)',
+      starred: true,
       greeting: "Let's create content that stops the scroll.",
       placeholder: 'Ask about reel scripts, content ideas, trending topics...',
       agentName: 'ViralMind AI',
@@ -368,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="demo-dropdown__item${d.id === currentDemo.id ? ' demo-dropdown__item--active' : ''}" data-demo="${d.id}">
         <div class="demo-dropdown__item-avatar" style="background:${d.gradient}">${d.initials}</div>
         <div class="demo-dropdown__item-info">
-          <span class="demo-dropdown__item-name">${d.name}</span>
+          <span class="demo-dropdown__item-name">${d.name}${d.starred ? ' <span class="demo-dropdown__star" title="Featured">★</span>' : ''}</span>
           <span class="demo-dropdown__item-role">${d.role}</span>
         </div>
         ${d.id === currentDemo.id ? '<svg class="demo-dropdown__item-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l4 4 6-7" stroke-linecap="round" stroke-linejoin="round"/></svg>' : ''}
