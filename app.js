@@ -1002,7 +1002,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Image URLs ---
   const IMG = {
-    meal: 'https://images.unsplash.com/photo-1544378730-5e409d0e649e?ixlib=rb-4.1.0&fm=jpg&crop=entropy&cs=srgb&w=600&q=80',
+    meal: 'https://images.unsplash.com/photo-1616902666559-af398792d890?ixlib=rb-4.1.0&fm=jpg&crop=entropy&cs=srgb&w=600&q=80',
     squat: 'https://images.unsplash.com/photo-1513352098199-8ccf457b35a8?ixlib=rb-4.1.0&fm=jpg&crop=entropy&cs=srgb&w=600&q=80',
     squatIdeal: 'https://images.unsplash.com/photo-1642267379398-c430d619019d?ixlib=rb-4.1.0&fm=jpg&crop=entropy&cs=srgb&w=600&q=80',
   };
