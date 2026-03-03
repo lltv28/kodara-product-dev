@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Done-For-You AI Product by Kodara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ─────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --black: #1A1A1A;
+
+    --alpha-light-25: rgba(26,26,26,0.04);
+    --alpha-light-50: rgba(26,26,26,0.06);
+    --alpha-light-100: rgba(26,26,26,0.09);
+    --alpha-light-200: rgba(26,26,26,0.20);
+    --alpha-light-300: rgba(26,26,26,0.28);
+    --alpha-light-400: rgba(26,26,26,0.36);
+    --alpha-light-500: rgba(26,26,26,0.48);
+    --alpha-light-600: rgba(26,26,26,0.60);
+    --alpha-light-900: rgba(26,26,26,0.80);
+
+    --alpha-dark-300: rgba(255,255,255,0.28);
+    --alpha-dark-600: rgba(255,255,255,0.60);
+    --alpha-dark-800: rgba(255,255,255,0.75);
+    --alpha-dark-900: rgba(255,255,255,0.80);
+
+    --brand: rgb(16,104,68);
+    --alpha-brand-50: rgba(16,104,68,0.06);
+    --alpha-brand-100: rgba(16,104,68,0.08);
+    --alpha-brand-200: rgba(16,104,68,0.12);
+    --alpha-brand-600: rgba(16,104,68,0.55);
+    --alpha-brand-950: rgba(16,104,68,0.92);
+
+    --shadow-card: 0px 22px 6px rgba(0,0,0,0), 0px 14px 6px rgba(0,0,0,0), 0px 8px 5px rgba(0,0,0,0.01), 0px 4px 4px rgba(0,0,0,0.02), 0px 1px 2px rgba(0,0,0,0.02);
+    --shadow-modal: 0px 67px 19px rgba(0,0,0,0), 0px 43px 17px rgba(0,0,0,0.01), 0px 24px 15px rgba(0,0,0,0.02), 0px 11px 11px rgba(0,0,0,0.03), 0px 3px 6px rgba(0,0,0,0.04);
+
+    --page-w: 860px;
+    --page-h: 1216px;
+  }
+
+  html {
+    font-family: 'Instrument Sans', system-ui, sans-serif;
+    font-variation-settings: 'wdth' 100;
+    color: var(--alpha-light-600);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 20px;
+  }
+
+  /* ── Page Container ───────────────────────────────────── */
+  .page {
+    width: var(--page-w);
+    min-height: var(--page-h);
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-modal);
+    border: 1px solid var(--alpha-light-100);
+    position: relative;
+    overflow: hidden;
+    padding: 52px 60px 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 28px;
+    right: 52px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--alpha-light-400);
+  }
+
+  .page-footer-brand {
+    position: absolute;
+    bottom: 28px;
+    left: 52px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--alpha-brand-600);
+  }
+
+  /* ── Typography ───────────────────────────────────────── */
+  h1 {
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -1.2px;
+    font-weight: 700;
+    color: var(--alpha-light-900);
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+    color: var(--alpha-light-900);
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -0.3px;
+    font-weight: 600;
+    color: var(--alpha-light-900);
+  }
+
+  h4 {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--alpha-light-900);
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--alpha-light-600);
+    font-weight: 400;
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--alpha-light-900);
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--alpha-brand-950);
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--alpha-brand-50);
+    border-radius: 999px;
+    border: 1px solid rgba(16,104,68,0.10);
+  }
+
+  .section-num {
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--alpha-light-50);
+    line-height: 1;
+    position: absolute;
+    top: 36px;
+    right: 52px;
+  }
+
+  /* ── Cover Page ───────────────────────────────────────── */
+  .cover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 64px;
+    background: var(--white);
+    position: relative;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(16,104,68,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cover-logo {
+    width: 88px;
+    height: 88px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 0 auto 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cover h1 {
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover .byline {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    color: var(--alpha-brand-950);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover .subtitle {
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--alpha-light-500);
+    max-width: 560px;
+    margin: 0 auto 52px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 52px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-card {
+    background: var(--alpha-dark-300);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--alpha-light-50);
+    border-radius: 16px;
+    padding: 28px 32px;
+    min-width: 195px;
+  }
+
+  .stat-value {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 700;
+    color: var(--alpha-brand-950);
+    letter-spacing: -0.5px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 500;
+    color: var(--alpha-light-500);
+    margin-top: 6px;
+  }
+
+  .confidential-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--alpha-light-25);
+    border: 1px solid var(--alpha-light-100);
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--alpha-light-500);
+    position: relative;
+    z-index: 1;
+  }
+
+  .confidential-badge svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+  }
+
+  /* ── Glass Card ───────────────────────────────────────── */
+  .glass-card {
+    background: var(--alpha-dark-300);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--alpha-light-50);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .glass-card-solid {
+    background: var(--alpha-light-25);
+    border: 1px solid var(--alpha-light-50);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .brand-card {
+    background: var(--alpha-brand-50);
+    border: 1px solid rgba(16,104,68,0.10);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  /* ── Quote Block ──────────────────────────────────────── */
+  .quote-block {
+    border-left: 3px solid var(--alpha-brand-950);
+    padding: 18px 24px;
+    background: var(--alpha-brand-50);
+    border-radius: 0 12px 12px 0;
+    margin: 24px 0;
+  }
+
+  .quote-block p {
+    font-size: 17px;
+    line-height: 27px;
+    font-style: italic;
+    color: var(--alpha-light-900);
+    font-weight: 500;
+  }
+
+  .quote-attribution {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--alpha-brand-950);
+    margin-top: 8px;
+    font-style: normal;
+  }
+
+  /* ── Icon List ────────────────────────────────────────── */
+  .icon-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .icon-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .icon-list .icon {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 999px;
+    background: var(--alpha-brand-50);
+    border: 1px solid rgba(16,104,68,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .icon-list .icon svg {
+    width: 14px;
+    height: 14px;
+    color: var(--alpha-brand-950);
+  }
+
+  /* ── Check List ───────────────────────────────────────── */
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .check-list li::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 6px;
+    background: var(--alpha-brand-50);
+    border: 1px solid rgba(16,104,68,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(16,104,68,0.92)' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m4.5 12.75 6 6 9-13.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* ── Steps ────────────────────────────────────────────── */
+  .step-num {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(16,104,68,0.10), rgba(16,104,68,0.04));
+    border: 1px solid rgba(16,104,68,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--alpha-brand-950);
+  }
+
+  .step-content h4 {
+    margin-bottom: 6px;
+  }
+
+  .step-content p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  /* ── Pricing Table ────────────────────────────────────── */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .tier-card {
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid var(--alpha-light-50);
+    position: relative;
+  }
+
+  .tier-card.entry {
+    background: var(--alpha-light-25);
+  }
+
+  .tier-card.profit {
+    background: var(--alpha-brand-50);
+    border-color: rgba(16,104,68,0.10);
+  }
+
+  .tier-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  .tier-card.entry .tier-badge {
+    background: var(--alpha-light-100);
+    color: var(--alpha-light-600);
+  }
+
+  .tier-card.profit .tier-badge {
+    background: rgba(16,104,68,0.12);
+    color: var(--alpha-brand-950);
+  }
+
+  .tier-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--alpha-light-900);
+    margin-bottom: 6px;
+  }
+
+  .tier-desc {
+    font-size: 15px;
+    line-height: 23px;
+    color: var(--alpha-light-500);
+  }
+
+  /* ── Case Study Card ──────────────────────────────────── */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .case-card {
+    background: var(--alpha-light-25);
+    border: 1px solid var(--alpha-light-50);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .case-card .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--alpha-light-900);
+    margin-bottom: 3px;
+  }
+
+  .case-card .role {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--alpha-light-400);
+    margin-bottom: 12px;
+  }
+
+  .case-card p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .case-card-wide {
+    background: var(--alpha-light-25);
+    border: 1px solid var(--alpha-light-50);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .case-card-wide .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--alpha-light-900);
+    margin-bottom: 3px;
+  }
+
+  .case-card-wide .role {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--alpha-light-400);
+    margin-bottom: 12px;
+  }
+
+  .case-card-wide p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  /* ── Example Grid ─────────────────────────────────────── */
+  .example-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .example-card {
+    background: var(--alpha-dark-300);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--alpha-light-50);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .example-card h4 {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .example-card .before {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--alpha-light-400);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--alpha-light-50);
+  }
+
+  .example-card .after {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--alpha-brand-950);
+    font-weight: 500;
+  }
+
+  .example-card .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .example-card .label.before-label {
+    color: var(--alpha-light-400);
+  }
+
+  .example-card .label.after-label {
+    color: var(--alpha-brand-950);
+  }
+
+  /* ── Ascension Diagram ────────────────────────────────── */
+  .ascension {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    margin: 28px 0;
+  }
+
+  .ascension-step {
+    text-align: center;
+    padding: 20px 24px;
+    border-radius: 12px;
+    flex: 1;
+    max-width: 210px;
+  }
+
+  .ascension-step.s1 {
+    background: var(--alpha-light-25);
+    border: 1px solid var(--alpha-light-100);
+  }
+
+  .ascension-step.s2 {
+    background: var(--alpha-brand-50);
+    border: 1px solid rgba(16,104,68,0.10);
+  }
+
+  .ascension-step.s3 {
+    background: rgba(16,104,68,0.12);
+    border: 1px solid rgba(16,104,68,0.16);
+  }
+
+  .ascension-step .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--alpha-light-900);
+    margin-bottom: 4px;
+  }
+
+  .ascension-step.s2 .step-title,
+  .ascension-step.s3 .step-title {
+    color: var(--alpha-brand-950);
+  }
+
+  .ascension-step .step-price {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--alpha-light-500);
+  }
+
+  .ascension-arrow {
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--alpha-light-300);
+  }
+
+  .ascension-arrow svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* ── Process Steps ────────────────────────────────────── */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .process-step::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 48px;
+    bottom: -28px;
+    width: 2px;
+    background: var(--alpha-light-50);
+  }
+
+  .process-step:last-child::after {
+    display: none;
+  }
+
+  /* ── Guarantee Box ────────────────────────────────────── */
+  .guarantee-box {
+    background: var(--alpha-brand-50);
+    border: 2px solid rgba(16,104,68,0.14);
+    border-radius: 16px;
+    padding: 36px;
+    text-align: center;
+  }
+
+  .guarantee-box h3 {
+    color: var(--alpha-brand-950);
+    margin-bottom: 10px;
+  }
+
+  .guarantee-box p {
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── Industries ───────────────────────────────────────── */
+  .industry-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .industry-pill {
+    background: var(--alpha-light-25);
+    border: 1px solid var(--alpha-light-100);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--alpha-light-600);
+  }
+
+  /* ── Divider ──────────────────────────────────────────── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--alpha-light-50);
+    margin: 28px 0;
+  }
+
+  .divider-sm {
+    width: 100%;
+    height: 1px;
+    background: var(--alpha-light-50);
+    margin: 16px 0;
+  }
+
+  /* ── Spacer ───────────────────────────────────────────── */
+  .spacer-8  { height: 8px; }
+  .spacer-12 { height: 12px; }
+  .spacer-16 { height: 16px; }
+  .spacer-20 { height: 20px; }
+  .spacer-24 { height: 24px; }
+  .spacer-28 { height: 28px; }
+  .spacer-32 { height: 32px; }
+  .spacer-40 { height: 40px; }
+  .spacer-48 { height: 48px; }
+
+  /* ── CTA ──────────────────────────────────────────────── */
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(180deg, #737373, #404040);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-variation-settings: 'wdth' 100;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--alpha-dark-900);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    filter: blur(0.2px);
+    pointer-events: none;
+  }
+
+  /* ── Print ────────────────────────────────────────────── */
+  @media print {
+    body {
+      background: white;
+      gap: 0;
+      padding: 0;
+    }
+    .page {
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      page-break-after: always;
+      min-height: 100vh;
+    }
+    .page:last-child {
+      page-break-after: avoid;
+    }
+  }
+
+  /* ── Responsive ───────────────────────────────────────── */
+  @media (max-width: 900px) {
+    :root { --page-w: 100%; }
+    .page { padding: 40px 32px; border-radius: 0; }
+    .stats-row { flex-direction: column; align-items: center; }
+    .case-grid, .example-grid, .tier-grid { grid-template-columns: 1fr; }
+    .ascension { flex-direction: column; }
+    .ascension-arrow { transform: rotate(90deg); }
+    .section-num { font-size: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 1 — COVER
+     ════════════════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-logo">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQHpisxQjPt3pQ/company-logo_100_100/B56ZjTTrZAHQAQ-/0/1755891808443/kodara_logo?e=1773878400&v=beta&t=sDqeNyomfNt5qsi3-O7NrBW_TbEEi1shYrfn2o9P6rE" alt="Kodara">
+  </div>
+
+  <h1>Done-For-You<br>AI Product</h1>
+  <p class="byline">by Kodara</p>
+
+  <p class="subtitle">How coaches, consultants, and service providers are building automated AI products that generate revenue 24/7 without sales calls, coaching calls, or their personal involvement.</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 2 — THE AI PRODUCT REVOLUTION
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">01</span>
+  <span class="section-label">The AI Product Revolution</span>
+  <div class="spacer-24"></div>
+
+  <h2>The Smartest Entrepreneurs Are<br>Selling AI Products in 2026</h2>
+  <div class="spacer-24"></div>
+
+  <p>Imagine you could take your brain, shrink it down, and put it into a box. And then you could sell that box to your clients. They keep it right on their desk. Whenever they need help, they don't call you, they don't email you, they don't book a coaching call &mdash; <strong>they just tap the box.</strong></p>
+  <div class="spacer-20"></div>
+
+  <p>Your AI version of yourself goes to work for them. <strong>24 hours a day. 365 days a year.</strong> Without you having to be involved at all.</p>
+  <div class="spacer-20"></div>
+
+  <p>That's exactly what we build for you &mdash; a fully automated AI product. Our clients sell these AI products from anywhere between <strong>$300 to $3,000</strong>. You can sell it forever, to an infinite number of people, fully automated and without requiring your time or involvement.</p>
+  <div class="spacer-28"></div>
+
+  <div class="glass-card">
+    <h4 style="margin-bottom: 16px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--alpha-light-400);">The $105m Record</h4>
+
+    <div class="quote-block" style="margin-top: 0;">
+      <p>"Alex Hormozi collected $105M in 72 hours in the biggest sales launch EVER &mdash; a huge component of what he was selling was his own 'Alex Hormozi AI'."</p>
+    </div>
+    <div class="spacer-16"></div>
+
+    <p>The pitch was simple: instead of buying courses or coaching, you pay to get his AI that plugs into your business software and does the work <strong>for you</strong>, exactly like Alex Hormozi would personally do it, but for a fraction of the price.</p>
+    <div class="spacer-12"></div>
+
+    <p>Obviously, this offer flew off the shelves. If you were a customer looking to solve a specific problem, why would you spend hours reading books or watching course videos when <strong>AI can just do the work for you?</strong></p>
+  </div>
+  <div class="spacer-28"></div>
+
+  <div class="glass-card-solid">
+    <h4 style="margin-bottom: 12px;">Why This Is Happening Right Now</h4>
+    <p>This is exactly why this new kind of AI product is selling so well. It simply is a <strong>better offer</strong> in terms of the value your clients get. The smartest coaches, consultants, and service providers aren't obsessively hiring more people &mdash; they're spending all their time and effort on selling AI products. Because it is, without a doubt, <strong>the most scalable way of growing your business in 2026.</strong></p>
+    <div class="spacer-16"></div>
+    <ul class="icon-list">
+      <li>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+        <span>Sell to an <strong>infinite number of people</strong> without requiring your time</span>
+      </li>
+      <li>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+        <span>No sales calls, no coaching calls, <strong>fully automated</strong></span>
+      </li>
+      <li>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+        <span>Your AI works <strong>24/7/365</strong> with no breaks or sick days</span>
+      </li>
+    </ul>
+  </div>
+
+  <span class="page-number">01</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 3 — PROOF / CASE STUDIES
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">02</span>
+  <span class="section-label">Proof It Works</span>
+  <div class="spacer-24"></div>
+
+  <h2>Real Results From Real Clients</h2>
+  <div class="spacer-16"></div>
+  <p>Every client we've worked with has been able to create their own AI product that creates a new source of revenue that is not dependent on them.</p>
+  <div class="spacer-28"></div>
+
+  <!-- Lucas result -->
+  <div class="brand-card" style="margin-bottom: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+      <div>
+        <div class="name" style="font-size:17px; font-weight:600; color:var(--alpha-brand-950);">Lucas &mdash; Founder</div>
+        <div class="role" style="font-size:14px; color:var(--alpha-light-500);">Marketing Agency Owner &amp; AI Product Creator</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:32px; font-weight:700; color:var(--alpha-brand-950); line-height:1;">$1.5M+</div>
+        <div style="font-size:12px; color:var(--alpha-light-500);">revenue generated</div>
+      </div>
+    </div>
+    <p style="font-size:15px; line-height:24px;">Built an AI that automates Facebook Ads for marketing agency owners. Clients pay <strong>$800/month</strong> for access. Generated <strong>$147,000 in the first month</strong> without a single sales call and without any coaching or customer support.</p>
+  </div>
+
+  <div class="case-grid">
+    <div class="case-card">
+      <div class="name">Scotty</div>
+      <div class="role">Business Funding Consultant</div>
+      <p>Pre-sold <strong>17 high-ticket clients</strong> on his AI product in the first few days &mdash; while the team was still building his AI. That's how hungry his market was.</p>
+    </div>
+    <div class="case-card">
+      <div class="name">Leanne Ellington</div>
+      <div class="role">Women's Body Image Coach</div>
+      <p>Was bottlenecked at 7 figures. Now uses her AI product to work with <strong>school districts across America</strong>, helping thousands of teenagers simultaneously &mdash; without being involved in delivery.</p>
+    </div>
+  </div>
+  <div class="spacer-20"></div>
+
+  <div class="case-card-wide">
+    <div class="name">Mike</div>
+    <div class="role">Marketing Agency Owner &mdash; Endorsed by Russell Brunson (ClickFunnels) &amp; Russ Ruffino (Clients On Demand)</div>
+    <p>His AI product is <strong>getting better results than copywriting teams he was paying multiple six figures per year for</strong>. AI is cheaper, works 24/7/365, and produces superior output.</p>
+  </div>
+  <div class="spacer-24"></div>
+
+  <h4 style="margin-bottom: 12px; color: var(--alpha-light-500); font-size: 13px; letter-spacing: 1px; text-transform: uppercase;">Industries We've Served</h4>
+  <div class="industry-pills">
+    <span class="industry-pill">Business Coaching</span>
+    <span class="industry-pill">Personal Finance</span>
+    <span class="industry-pill">Marriage Coaching</span>
+    <span class="industry-pill">Sales Consulting</span>
+    <span class="industry-pill">Day Trading</span>
+    <span class="industry-pill">Personal Training</span>
+    <span class="industry-pill">Mental Health</span>
+    <span class="industry-pill">Marketing Agencies</span>
+    <span class="industry-pill">Body Image</span>
+    <span class="industry-pill">Business Funding</span>
+    <span class="industry-pill" style="background: var(--alpha-brand-50); border-color: rgba(16,104,68,0.10); color: var(--alpha-brand-950); font-weight: 600;">And Many More</span>
+  </div>
+
+  <span class="page-number">02</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 4 — EXAMPLE: PERSONAL TRAINER AI
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">03</span>
+  <span class="section-label">How AI Products Work</span>
+  <div class="spacer-24"></div>
+
+  <h2>Example: Personal Trainer AI</h2>
+  <div class="spacer-20"></div>
+
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div class="example-card" style="flex: 1;">
+      <div class="label before-label">The Problem</div>
+      <div class="before" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0; font-size: 15px; line-height: 24px;">Every time a new client comes in, you're manually writing a custom workout plan, meal plan, and adjusting it every few weeks. Clients log meals by hand, wait for your feedback. More clients = less time.</div>
+    </div>
+    <div class="brand-card" style="flex: 1;">
+      <div class="label after-label" style="margin-bottom: 6px;">With Your AI Product</div>
+      <div style="font-size: 15px; line-height: 24px; color: var(--alpha-brand-950); font-weight: 500;">Clients snap a photo of their meal &rarr; AI calculates calories &amp; macros &rarr; tracks goals &rarr; adjusts programs in real time. Works for hundreds of clients simultaneously.</div>
+    </div>
+  </div>
+  <div class="spacer-16"></div>
+
+  <div class="glass-card-solid">
+    <p><strong>Price point:</strong> $300 &ndash; $3,000 &mdash; sold fully automated without a sales call, because the value is so easy to see for a client.</p>
+  </div>
+  <div class="spacer-20"></div>
+
+  <!-- Screenshot placeholders — 4:5 vertical ratio -->
+  <div style="display: flex; gap: 20px; flex: 1;">
+    <div style="flex: 1; aspect-ratio: 4/5; border-radius: 16px; border: 2px dashed var(--alpha-light-200); background: var(--alpha-light-25); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--alpha-light-400); font-size: 14px; font-weight: 500;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
+      Demo screenshot 1
+    </div>
+    <div style="flex: 1; aspect-ratio: 4/5; border-radius: 16px; border: 2px dashed var(--alpha-light-200); background: var(--alpha-light-25); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--alpha-light-400); font-size: 14px; font-weight: 500;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
+      Demo screenshot 2
+    </div>
+  </div>
+
+  <span class="page-number">03</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 5 — EXAMPLE: COACH / CONSULTANT AI
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">04</span>
+  <span class="section-label">How AI Products Work</span>
+  <div class="spacer-24"></div>
+
+  <h2>Example: Coach / Consultant AI</h2>
+  <div class="spacer-20"></div>
+
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div class="example-card" style="flex: 1;">
+      <div class="label before-label">The Problem</div>
+      <div class="before" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0; font-size: 15px; line-height: 24px;">Every new client means back-to-back calls, learning their situation, then manually building an action plan. Questions at 11pm? They wait until the next scheduled call. Not scalable.</div>
+    </div>
+    <div class="brand-card" style="flex: 1;">
+      <div class="label after-label" style="margin-bottom: 6px;">With Your AI Product</div>
+      <div style="font-size: 15px; line-height: 24px; color: var(--alpha-brand-950); font-weight: 500;">AI asks the right questions, builds a custom 30/60/90-day plan. Answers questions at 11pm. Can respond in your voice or generate a custom video for each client.</div>
+    </div>
+  </div>
+  <div class="spacer-16"></div>
+
+  <div class="glass-card-solid">
+    <p><strong>The result:</strong> You can help an unlimited number of clients without getting on a single call. Your expertise is working for people around the clock.</p>
+  </div>
+  <div class="spacer-20"></div>
+
+  <!-- Screenshot placeholders — 4:5 vertical ratio -->
+  <div style="display: flex; gap: 20px; flex: 1;">
+    <div style="flex: 1; aspect-ratio: 4/5; border-radius: 16px; border: 2px dashed var(--alpha-light-200); background: var(--alpha-light-25); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--alpha-light-400); font-size: 14px; font-weight: 500;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
+      Demo screenshot 1
+    </div>
+    <div style="flex: 1; aspect-ratio: 4/5; border-radius: 16px; border: 2px dashed var(--alpha-light-200); background: var(--alpha-light-25); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--alpha-light-400); font-size: 14px; font-weight: 500;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
+      Demo screenshot 2
+    </div>
+  </div>
+
+  <span class="page-number">04</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 6 — EXAMPLE: SERVICES / AGENCY AI
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">05</span>
+  <span class="section-label">How AI Products Work</span>
+  <div class="spacer-24"></div>
+
+  <h2>Example: Services Business /<br>Agency AI</h2>
+  <div class="spacer-20"></div>
+
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div class="example-card" style="flex: 1;">
+      <div class="label before-label">The Problem</div>
+      <div class="before" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0; font-size: 15px; line-height: 24px;">Countless hours reviewing client accounts, gathering data, building reports, walking clients through numbers on calls. A never-ending cycle of manual review and hand-holding.</div>
+    </div>
+    <div class="brand-card" style="flex: 1;">
+      <div class="label after-label" style="margin-bottom: 6px;">With Your AI Product</div>
+      <div style="font-size: 15px; line-height: 24px; color: var(--alpha-brand-950); font-weight: 500;">AI analyzes campaigns in real time, identifies underperformers, gives specific recommendations &mdash; exactly like you would. Instant, unlimited clients, no manual data entry.</div>
+    </div>
+  </div>
+  <div class="spacer-16"></div>
+
+  <div class="glass-card-solid">
+    <h4 style="margin-bottom: 10px;">The Core Value Proposition</h4>
+    <p>These AI products sell for <strong>$300 to $3,000</strong> because the value is obvious. Instead of sitting through hours of content, <strong>the AI just does the work for them</strong>. It's a win-win.</p>
+  </div>
+  <div class="spacer-20"></div>
+
+  <!-- Screenshot placeholders — 4:5 vertical ratio -->
+  <div style="display: flex; gap: 20px; flex: 1;">
+    <div style="flex: 1; aspect-ratio: 4/5; border-radius: 16px; border: 2px dashed var(--alpha-light-200); background: var(--alpha-light-25); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--alpha-light-400); font-size: 14px; font-weight: 500;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
+      Demo screenshot 1
+    </div>
+    <div style="flex: 1; aspect-ratio: 4/5; border-radius: 16px; border: 2px dashed var(--alpha-light-200); background: var(--alpha-light-25); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--alpha-light-400); font-size: 14px; font-weight: 500;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg>
+      Demo screenshot 2
+    </div>
+  </div>
+
+  <span class="page-number">05</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 7 — THE BUSINESS MODEL
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">06</span>
+  <span class="section-label">The Business Model</span>
+  <div class="spacer-24"></div>
+
+  <h2>The Two-Level AI Product System</h2>
+  <div class="spacer-12"></div>
+  <p>Think of it like a gym. Most gyms offer a day pass before you sign up for the full membership. That's exactly how this works.</p>
+  <div class="spacer-28"></div>
+
+  <div class="tier-grid">
+    <div class="tier-card entry">
+      <span class="tier-badge">Level 1</span>
+      <h3 style="margin-bottom: 6px;">Entry Point AI</h3>
+      <div class="tier-price">$20 &ndash; $200</div>
+      <div class="divider-sm"></div>
+      <div class="tier-desc">
+        Sold with a simple sales video. Gets people in the door, lets them experience your AI, and start seeing results fast.
+      </div>
+    </div>
+    <div class="tier-card profit">
+      <span class="tier-badge">Level 2</span>
+      <h3 style="margin-bottom: 6px;">Profit Center AI</h3>
+      <div class="tier-price">$500 &ndash; $3,000</div>
+      <div class="divider-sm"></div>
+      <div class="tier-desc">
+        The premium version. Also sold through a sales video. This is where the real revenue is generated. Upgrading becomes a no-brainer.
+      </div>
+    </div>
+  </div>
+  <div class="spacer-40"></div>
+
+  <h4 style="text-align: center; margin-bottom: 10px;">The Automated Ascension Path</h4>
+  <div class="ascension">
+    <div class="ascension-step s1">
+      <div class="step-title">Entry Point AI</div>
+      <div class="step-price">$20 &ndash; $200</div>
+    </div>
+    <div class="ascension-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+    </div>
+    <div class="ascension-step s2">
+      <div class="step-title">Profit Center AI</div>
+      <div class="step-price">$500 &ndash; $3,000</div>
+    </div>
+    <div class="ascension-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+    </div>
+    <div class="ascension-step s3">
+      <div class="step-title">High-Ticket Offer</div>
+      <div class="step-price">$5,000+</div>
+    </div>
+  </div>
+  <div class="spacer-32"></div>
+
+  <div class="glass-card-solid">
+    <h4 style="margin-bottom: 12px;">The Revenue Flywheel</h4>
+    <ul class="icon-list">
+      <li>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+        <span><strong>No more dry spells</strong> between high-ticket enrollments &mdash; steady, reliable income every month</span>
+      </li>
+      <li>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+        <span><strong>Unlock a massive new market</strong> &mdash; reach people who want help but aren't ready for $5K&ndash;$10K+</span>
+      </li>
+      <li>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+        <span><strong>Automatic ascension</strong> &mdash; AI buyers see results, then upgrade to your premium offers</span>
+      </li>
+      <li>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+        <span><strong>Minimal overhead</strong> &mdash; entire operation runs with just one support VA</span>
+      </li>
+    </ul>
+  </div>
+
+  <span class="page-number">06</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 8 — WHY AI BEATS COURSES
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">07</span>
+  <span class="section-label">Why AI Products Win</span>
+  <div class="spacer-24"></div>
+
+  <h2>Why AI Products Beat Courses<br>&amp; Group Coaching in 2026</h2>
+  <div class="spacer-20"></div>
+
+  <p>If you've ever tried online courses or group coaching, you know they <em>sound</em> hands-off and easy to sell. But the reality is often very different.</p>
+  <div class="spacer-28"></div>
+
+  <!-- Comparison table -->
+  <div style="border: 1px solid var(--alpha-light-100); border-radius: 16px; overflow: hidden;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+      <thead>
+        <tr style="background: var(--alpha-light-25);">
+          <th style="text-align:left; padding: 16px 20px; font-weight: 600; color: var(--alpha-light-900); border-bottom: 1px solid var(--alpha-light-50);"></th>
+          <th style="text-align:center; padding: 16px 20px; font-weight: 600; color: var(--alpha-light-400); border-bottom: 1px solid var(--alpha-light-50);">Online Course</th>
+          <th style="text-align:center; padding: 16px 20px; font-weight: 600; color: var(--alpha-light-400); border-bottom: 1px solid var(--alpha-light-50);">Group Coaching</th>
+          <th style="text-align:center; padding: 16px 20px; font-weight: 600; color: var(--alpha-brand-950); border-bottom: 1px solid var(--alpha-light-50); background: var(--alpha-brand-50);">AI Product</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: 500; color: var(--alpha-light-900); border-bottom: 1px solid var(--alpha-light-50);">Delivery</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Pre-recorded video</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Live calls</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-brand-950); font-weight:500; border-bottom: 1px solid var(--alpha-light-50); background: var(--alpha-brand-50);">Automated 24/7</td>
+        </tr>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: 500; color: var(--alpha-light-900); border-bottom: 1px solid var(--alpha-light-50);">Your Time</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Create once + support</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Hours per week</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-brand-950); font-weight:500; border-bottom: 1px solid var(--alpha-light-50); background: var(--alpha-brand-50);">Near zero</td>
+        </tr>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: 500; color: var(--alpha-light-900); border-bottom: 1px solid var(--alpha-light-50);">Personalization</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">None</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Limited</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-brand-950); font-weight:500; border-bottom: 1px solid var(--alpha-light-50); background: var(--alpha-brand-50);">Fully customized</td>
+        </tr>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: 500; color: var(--alpha-light-900); border-bottom: 1px solid var(--alpha-light-50);">Scalability</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Moderate</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Very limited</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-brand-950); font-weight:500; border-bottom: 1px solid var(--alpha-light-50); background: var(--alpha-brand-50);">Unlimited</td>
+        </tr>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: 500; color: var(--alpha-light-900); border-bottom: 1px solid var(--alpha-light-50);">Client Results</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Low completion</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500); border-bottom: 1px solid var(--alpha-light-50);">Depends on you</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-brand-950); font-weight:500; border-bottom: 1px solid var(--alpha-light-50); background: var(--alpha-brand-50);">AI does the work</td>
+        </tr>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: 500; color: var(--alpha-light-900);">Sales Process</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500);">Hard to sell</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-light-500);">Sales calls</td>
+          <td style="text-align:center; padding: 14px 20px; color: var(--alpha-brand-950); font-weight:500; background: var(--alpha-brand-50);">Simple video</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="spacer-32"></div>
+
+  <div class="quote-block">
+    <p>"In 2026, people don't want to sit through hours of content. They just want results. And that's exactly what an AI product delivers."</p>
+  </div>
+  <div class="spacer-32"></div>
+
+  <div class="glass-card-solid">
+    <h4 style="margin-bottom: 12px;">What Business Owners Actually Want</h4>
+    <ul class="check-list">
+      <li>Use AI in a way that produces real revenue</li>
+      <li>Automate to the point where you're not trading time for money</li>
+      <li>A lean, profitable business with minimal employees and overhead</li>
+    </ul>
+  </div>
+
+  <span class="page-number">07</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 9 — THE DONE-FOR-YOU PROCESS
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">08</span>
+  <span class="section-label">The Done-For-You Process</span>
+  <div class="spacer-24"></div>
+
+  <h2>How We Build Your<br>AI Product For You</h2>
+  <div class="spacer-12"></div>
+  <p>We handle everything. As a business owner, you can't spend hours every week on this. That's why once we have our initial strategy in place, <strong>we staff it for you at no additional cost.</strong></p>
+  <div class="spacer-40"></div>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Custom Strategy &amp; Positioning</h4>
+        <p>We build a custom strategy for what's working best in your industry right now. We help you figure out the positioning, packaging, and pricing of your AI product. We've worked with virtually every industry.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Your Dedicated AI Engineer</h4>
+        <p>We place a highly trained AI Engineer to work 1-on-1 with you. They handle <strong>literally everything</strong> &mdash; building your AI, customizing it to match your brand, helping you launch and generate revenue. All you do is answer a few questions once or twice a month.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Knowledge Extraction &amp; AI Training</h4>
+        <p>You create logins for us on your platforms &mdash; Zoom, GoHighLevel, Kajabi, ClickFunnels &mdash; anywhere your knowledge lives. Your AI Engineer logs in and trains your AI on <strong>how you think</strong>.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Custom Branding &amp; Functions</h4>
+        <p>We brand everything to match your business. When clients log in, they see <strong>your business, not ours</strong>. We custom-build the specific functions your AI needs &mdash; like photo analysis, account integration, or custom video generation.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Sales Funnel &amp; Launch</h4>
+        <p>We assemble the sales funnel and launch plan. We build you the funnel and all the messaging. Whatever price you charge for your AI, <strong>you keep 100% of the profits</strong>. We don't take a percentage of your revenue.</p>
+      </div>
+    </div>
+  </div>
+
+  <span class="page-number">08</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 10 — WHAT YOU GET
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">09</span>
+  <span class="section-label">What You Get</span>
+  <div class="spacer-24"></div>
+
+  <h2>Everything Included</h2>
+  <div class="spacer-32"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+
+    <div class="glass-card-solid" style="display: flex; gap: 20px; align-items: flex-start;">
+      <div class="step-num" style="background: linear-gradient(135deg, rgba(16,104,68,0.14), rgba(16,104,68,0.06)); border-color: rgba(16,104,68,0.16);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(16,104,68,0.92)"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"/></svg>
+      </div>
+      <div>
+        <h4>Custom AI Product Strategy</h4>
+        <p style="font-size:15px; line-height:24px;">Positioning, packaging, and pricing tailored to your industry and expertise. Built on what's working right now for businesses like yours.</p>
+      </div>
+    </div>
+
+    <div class="glass-card-solid" style="display: flex; gap: 20px; align-items: flex-start;">
+      <div class="step-num" style="background: linear-gradient(135deg, rgba(16,104,68,0.14), rgba(16,104,68,0.06)); border-color: rgba(16,104,68,0.16);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(16,104,68,0.92)"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
+      </div>
+      <div>
+        <h4>Dedicated 1-on-1 AI Engineer</h4>
+        <p style="font-size:15px; line-height:24px;">A highly trained engineer assigned to your project. They build, customize, and launch your AI product. You just answer a few questions once or twice a month.</p>
+      </div>
+    </div>
+
+    <div class="glass-card-solid" style="display: flex; gap: 20px; align-items: flex-start;">
+      <div class="step-num" style="background: linear-gradient(135deg, rgba(16,104,68,0.14), rgba(16,104,68,0.06)); border-color: rgba(16,104,68,0.16);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(16,104,68,0.92)"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"/></svg>
+      </div>
+      <div>
+        <h4>Fully Built AI Product</h4>
+        <p style="font-size:15px; line-height:24px;">Your AI, trained on your expertise, branded to your business. Custom functions built for your specific use case. Clients see your business, never ours.</p>
+      </div>
+    </div>
+
+    <div class="glass-card-solid" style="display: flex; gap: 20px; align-items: flex-start;">
+      <div class="step-num" style="background: linear-gradient(135deg, rgba(16,104,68,0.14), rgba(16,104,68,0.06)); border-color: rgba(16,104,68,0.16);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(16,104,68,0.92)"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
+      </div>
+      <div>
+        <h4>Sales Funnel &amp; Launch Plan</h4>
+        <p style="font-size:15px; line-height:24px;">Complete funnel, messaging, and launch strategy. You keep 100% of profits &mdash; we don't take any percentage of your revenue. It's your AI, your clients, your money.</p>
+      </div>
+    </div>
+
+    <div class="glass-card-solid" style="display: flex; gap: 20px; align-items: flex-start;">
+      <div class="step-num" style="background: linear-gradient(135deg, rgba(16,104,68,0.14), rgba(16,104,68,0.06)); border-color: rgba(16,104,68,0.16);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(16,104,68,0.92)"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+      </div>
+      <div>
+        <h4>Risk-Free Guarantee</h4>
+        <p style="font-size:15px; line-height:24px;">You don't pay us until you've tried your AI, tested it, and know for a fact it will produce real results. If it doesn't generate at least 50 high-ticket clients, you don't pay a penny.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <span class="page-number">09</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 11 — NEXT STEPS
+     ════════════════════════════════════════════════════════ -->
+<div class="page">
+  <span class="section-num">10</span>
+  <span class="section-label">Implementation &amp; Next Steps</span>
+  <div class="spacer-24"></div>
+
+  <h2>Is This Right For You?</h2>
+  <div class="spacer-28"></div>
+
+  <h4 style="margin-bottom: 16px; color: var(--alpha-light-400); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;">This Is For You If:</h4>
+  <ul class="check-list" style="margin-bottom: 36px;">
+    <li>You're a coach, consultant, or service provider with real expertise</li>
+    <li>You want to generate revenue without trading your time for money</li>
+    <li>You're tired of the course/coaching hamster wheel</li>
+    <li>You want a lean business with minimal employees and overhead</li>
+    <li>You want to reach more people than 1-on-1 work allows</li>
+    <li>You're ready to leverage AI as a product, not just a tool</li>
+  </ul>
+
+  <h4 style="margin-bottom: 16px; color: var(--alpha-light-400); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;">During Your Strategy Call, You'll Discover:</h4>
+  <ul class="icon-list" style="margin-bottom: 36px;">
+    <li>
+      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+      <span>Exactly how this system can be customized for your specific business and goals</span>
+    </li>
+    <li>
+      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+      <span>A live demo of what your AI product could look like in action</span>
+    </li>
+    <li>
+      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></span>
+      <span>The entire done-for-you process mapped out start to finish</span>
+    </li>
+  </ul>
+
+  <div class="guarantee-box">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(16,104,68,0.92)" style="margin-bottom: 14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+    <h3>Our Guarantee</h3>
+    <p>We build your automated AI product fully done-for-you and <strong>you only pay after you've seen the results</strong>. We guarantee it generates at least <strong>50 high-ticket clients</strong> for your business, or you don't pay us a single penny.</p>
+  </div>
+  <div class="spacer-32"></div>
+
+  <div style="text-align: center; padding-top: 20px; border-top: 1px solid var(--alpha-light-50);">
+    <p style="font-size: 12px; color: var(--alpha-light-400); max-width: 600px; margin: 0 auto; line-height: 18px;">
+      Results vary. The examples shared are from real clients but individual results depend on many factors including your expertise, market, and effort. We cannot guarantee specific income or results. This document is for informational purposes only and does not constitute a guarantee of earnings.
+    </p>
+  </div>
+
+  <span class="page-number">10</span>
+  <span class="page-footer-brand">Done-For-You AI Product by Kodara</span>
+</div>
+
+</body>
+</html>
