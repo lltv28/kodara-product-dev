@@ -84,7 +84,7 @@ export default function App() {
   }
 
   return (
-    <div className="h-screen w-screen flex flex-col bg-[#f0f0f0]">
+    <div className="flex flex-col bg-[#f0f0f0]" style={{ width: '80vw', height: '80vh', transform: 'scale(1.25)', transformOrigin: 'top left' }}>
       {/* Demo Controls Bar */}
       <div className="flex-shrink-0 bg-white border-b border-[rgba(26,26,26,0.09)] px-5 py-2 flex items-center justify-between z-[100]">
         <div className="flex items-center gap-4">
