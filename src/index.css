@@ -33,6 +33,10 @@
   font-variation-settings: 'wdth' 100;
 }
 
+html {
+  zoom: 1.25;
+}
+
 body {
   margin: 0;
   font-family: 'Instrument Sans', sans-serif;
